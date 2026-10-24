@@ -864,3 +864,43 @@ button {
     font-weight: 760;
   }
 }
+
+/* Breathing Mandarine dots */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+}
+
+/* Dots that already use transform for positioning keep their offset */
+@keyframes pulse-route {
+  0%, 100% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(-50%) scale(1.25); }
+}
+
+@keyframes pulse-portrait {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.25); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .dot {
+    transform-origin: center;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  .route-dot {
+    animation: pulse-route 2s ease-in-out infinite;
+  }
+
+  .portrait::after {
+    animation: pulse-portrait 2s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot,
+  .route-dot,
+  .portrait::after {
+    animation: none;
+  }
+}
