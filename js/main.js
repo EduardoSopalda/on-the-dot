@@ -52,6 +52,31 @@
     else el.textContent = text;
   }
 
+  // Twinkling lights: a few random dots on the hero texture's 18px grid
+  function twinkleHero() {
+    const host = document.querySelector(".hero-twinkle");
+    if (!host || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const hero = host.parentElement;
+    const cols = Math.floor(hero.clientWidth / 18);
+    const rows = Math.floor(hero.clientHeight / 18);
+    if (!cols || !rows) return;
+    const count = Math.min(26, Math.round((cols * rows) / 45));
+    const used = new Set();
+    for (let i = 0; i < count; i++) {
+      const c = Math.floor(Math.random() * cols);
+      const r = Math.floor(Math.random() * rows);
+      if (used.has(c + "," + r)) continue;
+      used.add(c + "," + r);
+      const s = document.createElement("span");
+      s.className = "twinkle";
+      s.style.left = c * 18 + 9 + "px";
+      s.style.top = r * 18 + 9 + "px";
+      s.style.setProperty("--t", (4.5 + Math.random() * 5).toFixed(2) + "s");
+      s.style.setProperty("--d", (-Math.random() * 9).toFixed(2) + "s");
+      host.appendChild(s);
+    }
+  }
+
   function setLanguage(lang) {
     const selected = TEXTS[lang] ? lang : "de";
     const t = TEXTS[selected];
@@ -181,6 +206,7 @@
 
   applyContact();
   setLanguage(readLang() || "de");
+  twinkleHero();
   startHero();
   watchSteps();
   stickyBar();

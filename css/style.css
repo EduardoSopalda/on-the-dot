@@ -194,6 +194,41 @@ button {
   overflow: hidden;
 }
 
+/* Twinkling lights on the hero dot texture (dots are added by js/main.js) */
+.hero-twinkle {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.twinkle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  margin: -1.5px 0 0 -1.5px;
+  border-radius: 50%;
+  background: var(--papier);
+  opacity: 0.09;
+  box-shadow: 0 0 6px 1px rgba(245, 241, 234, 0.35);
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.09; }
+  45% { opacity: 0.55; }
+  60% { opacity: 0.3; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .twinkle {
+    animation: twinkle var(--t, 6s) ease-in-out var(--d, 0s) infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-twinkle { display: none; }
+}
+
 .hero-top {
   display: flex;
   align-items: center;
