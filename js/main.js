@@ -1,31 +1,16 @@
-// Language toggle, the load moment, step weights on scroll and the sticky contact bar.
+// Applies the texts, contact links, the load moment, step weights on scroll
+// and the sticky contact bar.
 (function () {
   "use strict";
 
-  const STORAGE_KEY = "martinEngelLang";
   const TEXTS = window.TEXTS || {};
   const SITE = window.SITE || {};
   const EXAMPLES = window.EXAMPLES || [];
   const root = document.documentElement;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  function readLang() {
-    try {
-      return localStorage.getItem(STORAGE_KEY);
-    } catch (error) {
-      return null;
-    }
-  }
-
-  function storeLang(lang) {
-    try {
-      localStorage.setItem(STORAGE_KEY, lang);
-    } catch (error) {
-      // Storage can be blocked. The toggle still works for this visit.
-    }
-  }
-
-  // Turns every full stop that ends a sentence into a round dot.
+  // Turns every full stop that ends a sentence into a round dot,
+  // keeping the last word and its dot together so the dot never wraps alone.
   function dotify(el, text) {
     el.textContent = "";
     const parts = text.split(/\.(?=\s|$)/);
@@ -34,7 +19,6 @@
         if (part) el.appendChild(document.createTextNode(part));
         return;
       }
-      // Keep the last word and its dot together so the dot never wraps alone.
       const cut = part.lastIndexOf(" ") + 1;
       if (cut) el.appendChild(document.createTextNode(part.slice(0, cut)));
       const word = document.createElement("span");
@@ -53,39 +37,44 @@
     else el.textContent = text;
   }
 
-  function renderExamples(lang) {
+  function applyTexts() {
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const value = TEXTS[el.getAttribute("data-i18n")];
+      if (value) setText(el, value);
+    });
+    document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
+      const value = TEXTS[el.getAttribute("data-i18n-aria")];
+      if (value) el.setAttribute("aria-label", value);
+    });
+    document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
+      const value = TEXTS[el.getAttribute("data-i18n-alt")];
+      if (value) el.setAttribute("alt", value);
+    });
+  }
+
+  function renderExamples() {
     const host = document.getElementById("examples");
     if (!host || !EXAMPLES.length) return;
-    const t = TEXTS[lang];
     host.textContent = "";
 
     EXAMPLES.forEach((example) => {
-      const copy = example[lang] || example.de;
       const article = document.createElement("article");
-      article.className = "case";
+      article.className = "story";
 
-      [
-        ["a", t["example.a"], copy.a],
-        ["thought", t["example.thought"], copy.thought],
-        ["b", t["example.b"], copy.b]
-      ].forEach(([kind, label, text]) => {
+      example.beats.forEach((beat) => {
         const row = document.createElement("div");
-        row.className = kind === "thought" ? "case-row case-row-thought" : "case-row";
+        row.className = beat.insight ? "beat beat-insight" : "beat";
 
-        const key = document.createElement("span");
-        key.className = "case-key";
-        key.textContent = label;
+        const label = document.createElement("span");
+        label.className = "beat-label";
+        label.textContent = beat.label;
 
-        const body = document.createElement("p");
-        if (kind === "thought") {
-          body.className = "case-thought";
-          dotify(body, text);
-        } else {
-          body.className = "case-text";
-          body.textContent = text;
-        }
+        const text = document.createElement("p");
+        text.className = "beat-text";
+        if (beat.insight) dotify(text, beat.text);
+        else text.textContent = beat.text;
 
-        row.append(key, body);
+        row.append(label, text);
         article.appendChild(row);
       });
 
@@ -93,58 +82,28 @@
     });
   }
 
-  function setLanguage(lang) {
-    const selected = TEXTS[lang] ? lang : "de";
-    const t = TEXTS[selected];
-    if (!t) return;
-
-    root.lang = selected;
-
-    document.querySelectorAll("[data-i18n]").forEach((el) => {
-      const value = t[el.getAttribute("data-i18n")];
-      if (value) setText(el, value);
-    });
-
-    document.querySelectorAll("[data-i18n-content]").forEach((el) => {
-      const value = t[el.getAttribute("data-i18n-content")];
-      if (value) el.setAttribute("content", value);
-    });
-
-    document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
-      const value = t[el.getAttribute("data-i18n-aria")];
-      if (value) el.setAttribute("aria-label", value);
-    });
-
-    document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
-      const value = t[el.getAttribute("data-i18n-alt")];
-      if (value) el.setAttribute("alt", value);
-    });
-
-    document.querySelectorAll(".lang-btn").forEach((btn) => {
-      btn.setAttribute("aria-pressed", String(btn.dataset.lang === selected));
-    });
-
-    renderExamples(selected);
-    storeLang(selected);
+  function setHref(selector, href) {
+    document.querySelectorAll(selector).forEach((a) => a.setAttribute("href", href));
   }
 
   function applyContact() {
-    if (SITE.phoneLink) {
-      document.querySelectorAll('[data-contact="phone"]').forEach((a) => a.setAttribute("href", "tel:" + SITE.phoneLink));
+    if (SITE.whatsapp) {
+      const message = SITE.whatsappMessage ? "?text=" + encodeURIComponent(SITE.whatsappMessage) : "";
+      setHref('[data-contact="whatsapp"]', "https://wa.me/" + SITE.whatsapp + message);
     }
-    if (SITE.phoneDisplay) {
-      document.querySelectorAll('[data-contact-text="phone"]').forEach((el) => (el.textContent = SITE.phoneDisplay));
-    }
+    if (SITE.phoneLink) setHref('[data-contact="phone"]', "tel:" + SITE.phoneLink);
     if (SITE.email) {
-      document.querySelectorAll('[data-contact="email"]').forEach((a) => a.setAttribute("href", "mailto:" + SITE.email));
-      document.querySelectorAll('[data-contact-text="email"]').forEach((el) => (el.textContent = SITE.email));
+      setHref('[data-contact="email"]', "mailto:" + SITE.email);
+      const subject = SITE.mailSubject ? "?subject=" + encodeURIComponent(SITE.mailSubject) : "";
+      setHref('[data-contact="problem"]', "mailto:" + SITE.email + subject);
     }
-    if (SITE.linkedin) {
-      document.querySelectorAll("[data-linkedin]").forEach((li) => {
-        li.hidden = false;
-        li.querySelector("a").setAttribute("href", SITE.linkedin);
-      });
-    }
+    if (SITE.linkedin) setHref('[data-contact="linkedin"]', SITE.linkedin);
+
+    document.querySelectorAll("[data-contact-text]").forEach((el) => {
+      const kind = el.getAttribute("data-contact-text");
+      if (kind === "phone" && SITE.phoneDisplay) el.textContent = SITE.phoneDisplay;
+      if (kind === "email" && SITE.email) el.textContent = SITE.email;
+    });
   }
 
   // The one orchestrated moment: words gain weight, then "gemacht" writes itself in.
@@ -183,10 +142,10 @@
     steps.forEach((step) => observer.observe(step));
   }
 
-  // Shows the compact "Kontakt speichern" bar once the hero has scrolled away,
+  // Shows the compact contact bar once the hero has scrolled away,
   // and hides it while one of the full contact blocks is on screen.
   function stickyBar() {
-    const bar = document.querySelector(".sticky-save");
+    const bar = document.querySelector(".sticky-bar");
     const hero = document.querySelector(".hero");
     const blocks = document.querySelectorAll(".contact");
     if (!bar || !hero || !("IntersectionObserver" in window)) return;
@@ -217,12 +176,9 @@
     blocks.forEach((block) => blockObserver.observe(block));
   }
 
-  document.querySelectorAll(".lang-btn").forEach((btn) => {
-    btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
-  });
-
+  applyTexts();
+  renderExamples();
   applyContact();
-  setLanguage(readLang() || "de");
   startHero();
   watchSteps();
   stickyBar();

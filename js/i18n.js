@@ -1,124 +1,81 @@
-// All visible text lives here. German is the default, English is optional.
-// Writing rules: clear standard German, formal "Sie", short sentences,
-// no hyphens or dashes anywhere in visible text.
+// All visible text lives here.
+// Key headlines come in pairs: English first, the German line beneath.
+// German uses "du". Short sentences. No hyphens or dashes in visible text.
 // Full stops in headlines become orange dots automatically.
 
 window.SITE = {
-  // Contact details. The vCard (martin-engel.vcf) is built separately:
-  // edit tools/build-assets.py and run it again when these change.
   phoneDisplay: "+49160 99 666 776",
   phoneLink: "+4916099666776",
   email: "martinengel1975@outlook.de",
-  // TODO: paste the LinkedIn profile URL. The LinkedIn row stays hidden while this is empty.
-  linkedin: ""
+  linkedin: "https://www.linkedin.com/in/martin-engel-berlin",
+  whatsapp: "4916099666776",
+  whatsappMessage: "Hallo Martin, wir haben uns auf der AUTOMA Chem getroffen. Mein Thema: ",
+  mailSubject: "Mein Problem in einem Satz"
 };
 
 window.TEXTS = {
-  de: {
-    "meta.title": "Martin Engel. Aus dem Handel. Für den Handel. Mit KI.",
-    "meta.description": "Martin Engel verbindet jahrzehntelange Erfahrung im Handel mit KI. Er findet für Läden den Weg vom Problem zur Lösung.",
-    "skip": "Zum Inhalt springen",
-    "lang.label": "Sprache",
+  "meta.title": "Martin Engel. You know your shop. I know AI.",
+  "skip": "Zum Inhalt springen",
 
-    "hero.aria": "Daten. KI. Verständlich gemacht.",
-    "portrait.alt": "Porträt von Martin Engel",
+  "hero.aria": "Daten. KI. Verständlich gemacht.",
+  "hero.place": "Berlin",
+  "opening.en": "Berlin is going digital. Someone has to bring the people along.",
+  "opening.de": "Berlin wird digital. Einer muss die Menschen mitnehmen.",
 
-    "name": "Martin Engel",
-    "oneliner": "Aus dem Handel. Für den Handel. Mit KI.",
-    "intro": "Seit Jahrzehnten im Handel, von der Filiale bis zur Zentrale. Heute vermittle ich KI für den Laden um die Ecke.",
+  "portrait.alt": "Porträt von Martin Engel",
+  "name": "Martin Engel",
+  "promise.en": "You know your shop. I\u00a0know AI. Together, it works.",
+  "promise.de": "Du kennst deinen Laden. Ich verbinde ihn mit KI.",
+  "proof.strip": "20\u00a0Jahre\u00a0Handel\u00a0· Aldi\u00a0· Blume\u00a02000\u00a0· Filiale\u00a0und\u00a0Zentrale",
+  "proof.line": "Ich kenne Händler, die seit den 90ern mit Daten arbeiten. Und Läden, die ihre Zahlen heute noch per Fax schicken. Ich spreche beide Sprachen.",
+  "reach": "Aus Berlin. Für Läden in ganz Deutschland.",
 
-    "contact.save": "Kontakt speichern",
-    "contact.call": "Anrufen",
-    "contact.mail": "Mail",
-    "contact.linkedin": "LinkedIn",
-    "contact.linkedinValue": "Profil ansehen",
-    "contact.heading": "Kontakt",
+  "cta.whatsapp": "Auf WhatsApp schreiben",
+  "cta.whatsappShort": "WhatsApp",
+  "cta.save": "Kontakt speichern",
+  "cta.call": "Anrufen",
+  "cta.mail": "Mail",
+  "cta.linkedin": "LinkedIn",
+  "cta.linkedinValue": "Profil ansehen",
+  "cta.problem": "Dein Problem in einem Satz",
 
-    "atob.title": "Von A nach B",
-    "atob.lead": "Ich sehe ein Problem im Laden und finde den Weg zur Lösung. Mit Erfahrung und KI.",
-    "atob.s1.word": "Zuhören.",
-    "atob.s1.text": "Ich gehe in den Laden und frage, wo es wirklich klemmt.",
-    "atob.s2.word": "Verstehen.",
-    "atob.s2.text": "Hinter dem sichtbaren Problem liegt meist ein anderes. Das finde ich.",
-    "atob.s3.word": "Lösen.",
-    "atob.s3.text": "Einfach, bezahlbar, sofort nutzbar. Keine Technik um der Technik willen.",
+  "think.en": "How I think",
+  "think.de": "So denke ich",
+  "think.closing": "Das ist nur ein Beispiel. So arbeite ich bei jedem Problem.",
+  "think.bridge": "Ob Laden, Lager oder Labor: Die meisten Probleme sind Planungsprobleme.",
 
-    "example.label": "Ein Beispiel",
-    "example.a": "A",
-    "example.thought": "Gedanke",
-    "example.b": "B",
+  "atob.en": "From A to B",
+  "atob.de": "Von A nach B",
+  "atob.s1.word": "Zuhören.",
+  "atob.s1.text": "Ich komme in deinen Laden und frage, wo es wirklich klemmt.",
+  "atob.s2.word": "Verstehen.",
+  "atob.s2.text": "Hinter dem sichtbaren Problem liegt meist ein anderes. Das finde ich.",
+  "atob.s3.word": "Lösen.",
+  "atob.s3.text": "Einfach, bezahlbar, sofort nutzbar. Keine Technik um der Technik willen.",
 
-    "principle.a": "KI macht die Routine.",
-    "principle.b": "Menschen",
-    "principle.c": "machen den Unterschied.",
+  "principle.en.a": "AI does the routine.",
+  "principle.en.b": "People",
+  "principle.en.c": "make the difference.",
+  "principle.de.a": "KI macht die Routine.",
+  "principle.de.b": "Menschen",
+  "principle.de.c": "machen den Unterschied.",
 
-    "invite.title": "Zeigen Sie mir Ihr Problem.",
-    "invite.sub": "Handel, Daten, KI. Ich finde den Weg von A nach B.",
+  "invite.en": "Show me your problem.",
+  "invite.de": "Zeig mir dein Problem.",
 
-    "footer.event": "Persönlich auf der AUTOMA Chem 2026 im Estrel Berlin.",
-    "footer.imprint": "Impressum",
-    "footer.privacy": "Datenschutz"
-  },
-
-  en: {
-    "meta.title": "Martin Engel. From retail. For retail. With AI.",
-    "meta.description": "Martin Engel combines decades of retail experience with AI. He finds the way from a shop's problem to its solution.",
-    "skip": "Skip to content",
-    "lang.label": "Language",
-
-    "hero.aria": "Data. AI. Made understandable.",
-    "portrait.alt": "Portrait of Martin Engel",
-
-    "name": "Martin Engel",
-    "oneliner": "From retail. For retail. With AI.",
-    "intro": "Decades in retail, from the shop floor to head office. Today I bring AI to the shop around the corner.",
-
-    "contact.save": "Save contact",
-    "contact.call": "Call",
-    "contact.mail": "Mail",
-    "contact.linkedin": "LinkedIn",
-    "contact.linkedinValue": "View profile",
-    "contact.heading": "Contact",
-
-    "atob.title": "From A to B",
-    "atob.lead": "I see a problem in the shop and find the way to a solution. With experience and AI.",
-    "atob.s1.word": "Listen.",
-    "atob.s1.text": "I go into the shop and ask where things really get stuck.",
-    "atob.s2.word": "Understand.",
-    "atob.s2.text": "Behind the visible problem there is usually another one. I find it.",
-    "atob.s3.word": "Solve.",
-    "atob.s3.text": "Simple, affordable, ready to use. No technology for its own sake.",
-
-    "example.label": "An example",
-    "example.a": "A",
-    "example.thought": "Thought",
-    "example.b": "B",
-
-    "principle.a": "AI does the routine.",
-    "principle.b": "People",
-    "principle.c": "make the difference.",
-
-    "invite.title": "Show me your problem.",
-    "invite.sub": "Retail, data, AI. I find the way from A to B.",
-
-    "footer.event": "In person at AUTOMA Chem 2026 at the Estrel Berlin.",
-    "footer.imprint": "Legal notice",
-    "footer.privacy": "Privacy"
-  }
+  "footer.event": "Persönlich auf der AUTOMA Chem 2026 im Estrel Berlin.",
+  "footer.imprint": "Impressum",
+  "footer.privacy": "Datenschutz"
 };
 
-// Examples: copy one entry to add another case. They appear in this order.
+// Stories that show how Martin thinks. Each beat has a label and a text.
+// The beat marked "insight" is set large. To add a story, copy one entry.
 window.EXAMPLES = [
   {
-    de: {
-      a: "Am Muttertag fehlen Blumen. Am Montag landen sie im Müll.",
-      thought: "Kein Blumenproblem. Ein Planungsproblem.",
-      b: "Vorbestellung, feste Lieferzeiten, einfache Prognosen. Bestellen auf den Punkt."
-    },
-    en: {
-      a: "On Mother's Day the flowers run out. On Monday they end up in the bin.",
-      thought: "Not a flower problem. A planning problem.",
-      b: "Preorders, fixed delivery times, simple forecasts. Ordering on the dot."
-    }
+    beats: [
+      { label: "Gesehen", text: "Am Muttertag fehlen Blumen. Am Montag landen sie im Müll." },
+      { label: "Geprüft", text: "Ich habe nachgesehen. Auf der größten Lieferplattform Berlins: kein einziger Blumenladen." },
+      { label: "Verstanden", text: "Kein Blumenproblem. Ein Planungsproblem.", insight: true }
+    ]
   }
 ];
