@@ -1,0 +1,12 @@
+# IONOS (Apache) settings. GitHub Pages ignores this file.
+AddType text/vcard .vcf
+AddCharset utf-8 .vcf
+AddType application/manifest+json .webmanifest
+AddType font/woff2 .woff2
+AddType image/webp .webp
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(woff2|webp|png|svg)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+</IfModule>

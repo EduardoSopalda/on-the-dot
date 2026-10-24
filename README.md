@@ -1,82 +1,77 @@
-# On the Dot
+# Martin Engel
 
-**Frisch und pünktlich. Order on the Dot.**
+**Daten. KI. Verständlich gemacht.**
+Aus dem Handel. Für den Handel. Mit KI.
 
-Working name. The final brand name will be decided later.
+Personal page of Martin Engel. Visitors at AUTOMA Chem 2026 (Estrel Berlin, 26 and 27 October 2026) scan a QR code on his phone, land here and save his contact in one tap.
 
-## What this is
+Live: https://eduardosopalda.github.io/on-the-dot/
 
-The website for On the Dot, a startup founded by Lars in Berlin.
+## Structure
 
-On the Dot helps small, owner run shops sell more and waste less. Florists come first, then bakeries, delis and caterers. Shops offer a small online menu of ready made products. Customers preorder and book an exact delivery time.
+    index.html              The page
+    css/style.css           Design: colours, typography, layout, motion, dark mode
+    js/i18n.js              All text (German default, English optional), contact details, examples
+    js/main.js              Language toggle, load animation, step weights, sticky contact bar
+    martin-engel.vcf        Contact card behind "Kontakt speichern" (UTF 8, with photo)
+    impressum.html          Legal notice (draft, see checklist)
+    datenschutz.html        Privacy policy (draft, see checklist)
+    manifest.webmanifest    Home screen app settings
+    icons/                  Favicon and home screen icons
+    images/                 Portrait (duotone) and share image og.png
+    fonts/                  Self hosted Fraunces, Instrument Sans, Caveat Brush (OFL licences included)
+    qr/                     QR code as SVG and PNG
+    tools/                  Scripts that rebuild portrait, icons, vCard, share image and QR code
 
-Behind the scenes, simple demand forecasting helps each shop order exactly what it will sell.
-
-## The mission
-
-Bring AI from the big chains to owner run shops, and make it easy to understand.
-
-German: *KI für inhabergeführte Läden. Einfach erklärt.*
-English: *AI for owner run shops. Simply explained.*
-
-Lars is the Vermittler: the person who connects AI and the shop counter.
-
-## Audience
-
-1. Owners of small, owner run shops in big German cities, starting in Berlin.
-2. Their customers, who live in German and English.
-
-## Languages
-
-German is the default. English is available through a language switch.
-All visible text lives in one file so both languages are easy to edit.
-
-## Writing rules
-
-1. The tagline is the only hook. All other German copy is clear, standard German that works equally well in Berlin, Munich, Hamburg or Mannheim. No dialect or slang.
-2. Plain, warm words. No tech jargon on shop pages.
-3. Sell moments, not logistics.
-4. No hyphens or em dashes in visible text. Use colons, periods or rewritten sentences.
-5. Placeholder shop stories stay clearly marked until real shops agree to appear.
-
-## Tech
-
-Static site: HTML, CSS and a little vanilla JavaScript.
-No framework, no build step, no backend.
-Hosted on IONOS.
-
-## Project structure
-
-    /index.html          Main page
-    /css/style.css       Styles
-    /js/i18n.js          All texts in German and English
-    /js/main.js          Language switch and small interactions
-    /images/             Photos and placeholders
-    /impressum.html      Legal notice (required in Germany)
-    /datenschutz.html    Privacy policy (required in Germany)
+No framework, no build step, no backend, no cookies, no analytics. Fonts are served from the same host, so no data goes to Google.
 
 ## Editing
 
-**Texts:** open `js/i18n.js` and change the German and English strings.
-**Images:** replace files in `/images/` and keep the same file names, or update the paths in `index.html`.
+**Text.** Open `js/i18n.js`. Every visible string is there, in `de` and `en`. Rules: clear standard German, formal "Sie", short sentences, no hyphens or dashes in visible text. Full stops in headlines turn into orange dots automatically.
 
-## Running locally
+**Add an example.** In `js/i18n.js`, copy one entry of `window.EXAMPLES` (the block from `{` to `}`), paste it below and change the texts. Each example has `a`, `thought` and `b` in both languages.
 
-Open `index.html` in a browser. Nothing to install.
+**LinkedIn.** In `js/i18n.js`, set `linkedin` in `window.SITE` to the profile URL. The LinkedIn row appears by itself. Also add it to `CONTACT` in `tools/build-assets.py` and rebuild the vCard (below).
 
-## Deploying to IONOS
+**Phone or mail.** Change them in `window.SITE` in `js/i18n.js`, in `CONTACT` in `tools/build-assets.py` (then rebuild the vCard), and in `impressum.html` and `datenschutz.html`.
 
-Option 1: upload all files to your IONOS webspace with SFTP.
-Option 2: connect this repository to IONOS Deploy Now for automatic deploys on every push.
+**Final URL.** When the page moves to its own domain, replace `https://eduardosopalda.github.io/on-the-dot/` in `index.html` (Open Graph tags), `tools/build-assets.py` and `tools/make-qr.py`, then rebuild the vCard and the QR code.
 
-## Before going live
+## Rebuilding assets
 
-1. Real Impressum and Datenschutz texts.
-2. Real photos and shop stories, with permission.
-3. Lars's photo and LinkedIn link.
-4. A working contact form service, or keep the email link.
-5. Check that the domain and trademark are free.
+From the repository root:
 
-## Status
+    pip install pillow segno
+    python3 tools/build-assets.py                  # portrait, icons, vCard
+    python3 tools/make-qr.py https://final-url/    # QR code into qr/
+    python3 -m http.server 8765                    # in a second terminal, then:
+    node tools/make-og.js                          # share image (needs Playwright)
 
-Early prototype. Built to test the idea with the first shops in Schöneberg.
+The portrait comes from `tools/source/martin-headshot.jpg`. To use a different photo, replace that file and run `build-assets.py`.
+
+## Viewing locally
+
+Run `python3 -m http.server 8765` in the repository root and open http://localhost:8765. Opening `index.html` directly from disk works, but browsers block the self hosted fonts on `file://`.
+
+## Hosting
+
+**GitHub Pages (free, current).** Repository Settings, Pages, Source: "Deploy from a branch", Branch: `main`, folder `/ (root)`. Every push to `main` goes live within a minute or two. The `.nojekyll` file makes GitHub serve the files as they are.
+
+**IONOS.** Either connect this repository with IONOS Deploy Now (static site, no build command, publish directory `/`), or upload all files by SFTP into the webspace root. `.htaccess` sets the right file types, so the vCard opens the contact dialog on phones. When moving to IONOS, switch the hosting paragraph in `datenschutz.html` (the IONOS text is prepared in a comment there) and update the URLs (see "Final URL").
+
+## QR code
+
+`qr/martin-engel-qr.svg` and `qr/martin-engel-qr.png`: Waldgrün `#1F3D2B` on Papierweiß `#F5F1EA`, error correction M, quiet zone of 4 modules. Regenerate with `tools/make-qr.py` whenever the URL changes. To show it on the iPhone, save the PNG to Photos and open it full screen at maximum brightness.
+
+## Pre launch checklist
+
+1. Impressum: fill in Martin's address in `impressum.html` and `datenschutz.html`, then remove the draft notices. Required in Germany before the page is shared.
+2. vCard import on iPhone (Safari: tap "Kontakt speichern", then "Kontakt hinzufügen"). Check umlauts in "Für" and the photo.
+3. vCard import on Android (Chrome downloads the file, open it with Contacts).
+4. QR scan from another phone's screen, with the iPhone at full brightness.
+5. "gemacht" not clipped at 320px width (narrowest iPhone SE setting) and on desktop.
+6. No hyphens or dashes in visible text, in German and English.
+7. Dark mode on iPhone (Settings, Display, Dark).
+8. LinkedIn URL set, or the row stays hidden.
+9. Share the link once in WhatsApp or LinkedIn and check the preview image.
+10. After the fair: update the footer line about AUTOMA Chem 2026 in `js/i18n.js` and the note in the vCard.

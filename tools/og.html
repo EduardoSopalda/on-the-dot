@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../css/style.css" />
+<style>
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  .og { position: relative; display: grid; grid-template-columns: 1fr 360px; align-items: center; gap: 56px;
+        width: 1200px; height: 630px; padding: 0 90px; box-sizing: border-box;
+        background-color: #1F3D2B; background-image: radial-gradient(rgba(245,241,234,.07) 1px, transparent 1.4px);
+        background-size: 14px 14px; color: #F5F1EA; }
+  .og .lockup { margin: -70px 0 0; width: 580px; }
+  .og .lw { font-weight: var(--w) !important; }
+  .og .signature-ink { clip-path: none !important; }
+  .og-photo { position: relative; }
+  .og-photo img { width: 360px; height: 360px; border-radius: 50%; display: block; }
+  .og-photo::after { content: ""; position: absolute; left: 85.4%; top: 85.4%; width: 44px; height: 44px; border-radius: 50%;
+        background: #FF7A1A; box-shadow: 0 0 0 6px #1F3D2B; transform: translate(-50%, -50%); }
+  .og-name { position: absolute; left: 90px; bottom: 36px; font-family: "Instrument Sans", sans-serif; font-size: 22px;
+        font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgba(245,241,234,.85); }
+</style>
+</head>
+<body>
+  <div class="og">
+    <div class="lockup">
+      <span class="lw lw-1">Daten<span class="dot">.</span></span>
+      <span class="lw lw-2">KI<span class="dot">.</span></span>
+      <span class="lw lw-3">Verständlich<span class="dot">.</span></span>
+      <span class="signature"><span class="signature-ink">gemacht</span></span>
+    </div>
+    <div class="og-photo"><img src="../images/martin.webp" alt="" /></div>
+    <div class="og-name">Martin Engel · Aus dem Handel. Für den Handel. Mit KI.</div>
+  </div>
+</body>
+</html>
