@@ -7,7 +7,9 @@ import base64
 import io
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageOps
+import random
+
+from PIL import Image, ImageChops, ImageDraw, ImageOps
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE = ROOT / "tools" / "source" / "martin-headshot.jpg"
@@ -20,12 +22,12 @@ MANDARINE = (0xFF, 0x7A, 0x1A)
 CONTACT = {
     "first": "Martin",
     "last": "Engel",
-    "title": "Aus dem Handel. Für den Handel. Mit KI.",
+    "title": "Du kennst deinen Laden. Ich verbinde ihn mit KI.",
     "phone": "+4916099666776",
     "email": "martinengel1975@outlook.de",
     "url": "https://eduardosopalda.github.io/on-the-dot/",
-    "linkedin": "",  # TODO: add the LinkedIn profile URL
-    "note": "Persönlich auf der AUTOMA Chem 2026 im Estrel Berlin.",
+    "linkedin": "https://www.linkedin.com/in/martin-engel-berlin",
+    "note": "Kennengelernt auf der AUTOMA Chem 2026",
 }
 
 
@@ -47,11 +49,19 @@ def duotone(im, dark=GREEN, light=PAPER):
     return Image.merge("RGB", (gray, gray, gray)).point(lut)
 
 
+def add_grain(im, amount=16, seed=1975):
+    # Subtle film grain: real, not polished.
+    rng = random.Random(seed)
+    noise = Image.new("L", im.size)
+    noise.putdata([128 + int(rng.gauss(0, amount)) for _ in range(im.size[0] * im.size[1])])
+    noise = Image.merge("RGB", (noise, noise, noise))
+    return Image.blend(im, ImageChops.overlay(im, noise), 0.5)
+
+
 def build_photo(src):
     crop = square_crop(src)
-    duo = duotone(crop)
-    duo.resize((640, 640), Image.LANCZOS).save(ROOT / "images" / "martin.webp", quality=78, method=6)
-    duo.resize((360, 360), Image.LANCZOS).save(ROOT / "images" / "martin-og.jpg", quality=86)
+    duo = add_grain(duotone(crop.resize((640, 640), Image.LANCZOS)))
+    duo.save(ROOT / "images" / "martin.webp", quality=84, method=6)
     return crop
 
 

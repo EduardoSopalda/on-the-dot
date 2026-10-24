@@ -2,11 +2,12 @@ BEGIN:VCARD
 VERSION:3.0
 N:Engel;Martin;;;
 FN:Martin Engel
-TITLE:Aus dem Handel. Für den Handel. Mit KI.
+TITLE:Du kennst deinen Laden. Ich verbinde ihn mit KI.
 TEL;TYPE=CELL,VOICE:+4916099666776
 EMAIL;TYPE=INTERNET:martinengel1975@outlook.de
 URL:https://eduardosopalda.github.io/on-the-dot/
-NOTE:Persönlich auf der AUTOMA Chem 2026 im Estrel Berlin.
+URL;TYPE=LinkedIn:https://www.linkedin.com/in/martin-engel-berlin
+NOTE:Kennengelernt auf der AUTOMA Chem 2026
 PHOTO;ENCODING=b;TYPE=JPEG:/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUG
  BgYHCQ4JCQgICRINDQoOFRIWFhUSFBQXGiEcFxgfGRQUHScdHyIjJSUlFhwpLCgkKyEkJST/2w
  BDAQYGBgkICREJCREkGBQYJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQk
