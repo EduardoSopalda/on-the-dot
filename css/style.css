@@ -214,9 +214,9 @@ button {
 }
 
 @keyframes twinkle {
-  0%, 100% { opacity: 0.09; }
-  45% { opacity: 0.55; }
-  60% { opacity: 0.3; }
+  0%, 100% { opacity: 0.09; transform: scale(1); }
+  45% { opacity: 0.55; transform: scale(1.4); }
+  60% { opacity: 0.3; transform: scale(1.2); }
 }
 
 @media (prefers-reduced-motion: no-preference) {
