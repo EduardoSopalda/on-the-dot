@@ -199,7 +199,7 @@ button {
   background-size: 18px 18px;
   color: var(--papier);
   padding-top: max(24px, env(safe-area-inset-top));
-  padding-bottom: clamp(100px, 26vw, 150px);
+  padding-bottom: clamp(56px, 12vw, 96px);
   overflow: hidden;
 }
 
@@ -369,22 +369,44 @@ button {
   flex-direction: column;
   align-items: flex-start;
   gap: 22px;
-  margin-top: calc(-1 * clamp(72px, 20vw, 108px));
+  margin-top: clamp(40px, 10vw, 64px);
 }
 
 .portrait {
   position: relative;
-  flex: 0 0 auto;
-  width: clamp(128px, 38vw, 192px);
+  z-index: 1;
+  width: clamp(112px, 30vw, 168px);
+  margin-top: clamp(20px, 5vw, 32px);
+  border-radius: 50%;
+  overflow: visible;
 }
 
+/* Waldgrün duotone: the photo is already toned; a multiply layer and fine grain keep it warm and real */
 .portrait img {
+  display: block;
   width: 100%;
+  height: auto;
   aspect-ratio: 1;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 0 0 6px var(--bg);
+  object-position: center 30%;
+  filter: contrast(1.04) saturate(1.1);
+  box-shadow: 0 0 0 4px rgba(245, 241, 234, 0.9);
   background: var(--waldgruen);
+}
+
+.portrait::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.24 0 0 0 0 0.17 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    linear-gradient(rgba(31, 61, 43, 0.55), rgba(31, 61, 43, 0.55));
+  background-size: 160px 160px, auto;
+  mix-blend-mode: multiply;
+  opacity: 0.85;
 }
 
 .portrait::after {
@@ -396,7 +418,7 @@ button {
   aspect-ratio: 1;
   border-radius: 50%;
   background: var(--mandarine);
-  box-shadow: 0 0 0 5px var(--bg);
+  box-shadow: 0 0 0 4px var(--waldgruen);
   transform: translate(-50%, -50%);
 }
 
@@ -967,5 +989,29 @@ button {
   .route-dot,
   .portrait::after {
     animation: none;
+  }
+}
+
+/* Portrait in hero: stacked and small on phones, beside the type stack on wider screens */
+@media (max-width: 359px) {
+  .portrait { width: 96px; margin-top: 16px; }
+}
+
+@media (min-width: 900px) {
+  .hero > .wrap {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "top top"
+      "lockup portrait";
+    column-gap: clamp(32px, 5vw, 72px);
+    align-items: center;
+  }
+  .hero-top { grid-area: top; }
+  .lockup { grid-area: lockup; }
+  .portrait {
+    grid-area: portrait;
+    width: clamp(200px, 22vw, 280px);
+    margin-top: clamp(40px, 11vw, 72px);
   }
 }
