@@ -43,6 +43,7 @@ window.TEXTS = {
     "atob.s2.sub": "Das Problem verstehen führt zur Lösung.",
     "atob.s2.text": "Hinter dem sichtbaren Problem liegt meist ein anderes. Das finde ich.",
     "atob.s3.word": "Lösen.",
+    "atob.s3.sub": "Für jedes Problem gibt es eine Lösung.",
     "atob.s3.text": "Einfach, bezahlbar, sofort nutzbar. Keine Technik um der Technik willen.",
 
     "example.label": "Ein Beispiel",
@@ -91,6 +92,7 @@ window.TEXTS = {
     "atob.s2.sub": "Understanding the problem leads to the solution.",
     "atob.s2.text": "Behind the visible problem there is usually another one. I find it.",
     "atob.s3.word": "Solve.",
+    "atob.s3.sub": "For every problem there is a solution.",
     "atob.s3.text": "Simple, affordable, ready to use. No technology for its own sake.",
 
     "example.label": "An example",
