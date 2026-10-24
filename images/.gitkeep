@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Datenschutz | On the Dot</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand" aria-label="On the Dot home">
+          <span class="brand-mark">OD</span>
+          <span class="brand-name">On the Dot</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="impressum.html">Impressum</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="container narrow">
+        <p class="section-tag">Datenschutz</p>
+        <h1>Placeholder privacy policy</h1>
+        <p>
+          This page is a placeholder and must be replaced with a legal privacy policy before going live.
+          Add the actual data processing details, contact information, cookies and rights for users.
+        </p>
+        <p>
+          German websites usually need a clear privacy notice that matches the way the site is used.
+        </p>
+      </div>
+    </main>
+  </body>
+</html>

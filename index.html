@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="site.title">On the Dot</title>
+    <meta
+      name="description"
+      content="On the Dot helps small shops sell more and waste less with smart, simple ordering and delivery.
+    "
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="#top" class="brand" aria-label="On the Dot home">
+          <span class="brand-mark">OD</span>
+          <span class="brand-name">On the Dot</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#mission" data-i18n="nav.mission">Mission</a>
+          <a href="#benefits" data-i18n="nav.benefits">Vorteile</a>
+          <a href="#shops" data-i18n="nav.shops">Shops</a>
+          <a href="#contact" data-i18n="nav.contact">Kontakt</a>
+        </nav>
+
+        <div class="language-switch" aria-label="Language switcher">
+          <button class="lang-btn active" data-lang="de" type="button">DE</button>
+          <button class="lang-btn" data-lang="en" type="button">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow" data-i18n="hero.eyebrow">AI for owner run shops</p>
+            <h1 data-i18n="hero.tagline">Frisch und pünktlich. Order on the Dot.</h1>
+            <p class="lead" data-i18n="hero.lead">
+              We help independent shops sell more, waste less and deliver at the exact time customers expect.
+            </p>
+            <div class="hero-actions">
+              <a href="#contact" class="btn btn-primary" data-i18n="hero.primaryCta">Jetzt sprechen</a>
+              <a href="#mission" class="btn btn-secondary" data-i18n="hero.secondaryCta">Mehr erfahren</a>
+            </div>
+            <ul class="hero-points" aria-label="Key benefits">
+              <li data-i18n="hero.point1">Mehr Umsatz im Nebenraum</li>
+              <li data-i18n="hero.point2">Weniger Überbestände</li>
+              <li data-i18n="hero.point3">Exakte Lieferzeiten</li>
+            </ul>
+          </div>
+
+          <div class="hero-visual" aria-label="Illustration of a small shop system">
+            <div class="phone-card">
+              <div class="card-topline">
+                <span class="dot green"></span>
+                <span class="dot amber"></span>
+                <span class="dot red"></span>
+              </div>
+              <div class="mini-panel">
+                <p data-i18n="visual.today">Heute</p>
+                <h3>24</h3>
+                <span data-i18n="visual.orders">Bestellungen</span>
+              </div>
+              <div class="mini-rows">
+                <div><span data-i18n="visual.bouquets">Bouquets</span><strong>6</strong></div>
+                <div><span data-i18n="visual.cakes">Cakes</span><strong>8</strong></div>
+                <div><span data-i18n="visual.lunch">Lunch</span><strong>10</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="mission" class="section section-light">
+        <div class="container narrow">
+          <p class="section-tag" data-i18n="mission.tag">Die Mission</p>
+          <h2 data-i18n="mission.title">AI for owner run shops. Simply explained.</h2>
+          <p data-i18n="mission.copy">
+            Big chains use data and forecasting every day. Small shops often work without it. On the Dot brings that clarity to the local counter and makes it easy to understand.
+          </p>
+        </div>
+      </section>
+
+      <section id="benefits" class="section">
+        <div class="container">
+          <p class="section-tag" data-i18n="benefits.tag">Warum es funktioniert</p>
+          <h2 data-i18n="benefits.title">A simple system for more sales and less waste</h2>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <div class="icon">01</div>
+              <h3 data-i18n="benefits.card1.title">Small menu, full focus</h3>
+              <p data-i18n="benefits.card1.text">Shops offer a clear selection of ready made products, ready for preorders and exact timing.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="icon">02</div>
+              <h3 data-i18n="benefits.card2.title">Demand that makes sense</h3>
+              <p data-i18n="benefits.card2.text">Simple forecasts help each shop order what it will sell and avoid overproduction.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="icon">03</div>
+              <h3 data-i18n="benefits.card3.title">Orders on time</h3>
+              <p data-i18n="benefits.card3.text">Customers choose a delivery window. The shop sees the demand before the day gets busy.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="shops" class="section section-accent">
+        <div class="container">
+          <p class="section-tag" data-i18n="shops.tag">Für welche Shops</p>
+          <h2 data-i18n="shops.title">Built for the neighborhood, not the chain</h2>
+
+          <div class="shop-grid">
+            <div class="shop-item">
+              <span class="shop-pill" data-i18n="shops.florist">Florist</span>
+              <p data-i18n="shops.floristText">Fresh bouquets and exact pickup or delivery slots for the same day.</p>
+            </div>
+            <div class="shop-item">
+              <span class="shop-pill" data-i18n="shops.bakery">Bakery</span>
+              <p data-i18n="shops.bakeryText">Fresh bread, pastries and little extras that sell best before lunch.</p>
+            </div>
+            <div class="shop-item">
+              <span class="shop-pill" data-i18n="shops.delicatessen">Delicatessen</span>
+              <p data-i18n="shops.delicatessenText">Ready made meals and seasonal favorites for busy city customers.</p>
+            </div>
+            <div class="shop-item">
+              <span class="shop-pill" data-i18n="shops.caterer">Caterer</span>
+              <p data-i18n="shops.catererText">Preorders for office lunches, small events and local gatherings.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-light quote-section">
+        <div class="container narrow quote-box">
+          <p class="quote-mark">“</p>
+          <p data-i18n="quote.text">We want to make AI useful for the shops that keep neighborhoods alive.</p>
+          <p class="quote-author" data-i18n="quote.author">Lars, founder</p>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact-section">
+        <div class="container contact-box">
+          <div>
+            <p class="section-tag" data-i18n="contact.tag">Kontakt</p>
+            <h2 data-i18n="contact.title">Ready to test the idea with the first shops?</h2>
+          </div>
+
+          <div class="contact-actions">
+            <a href="mailto:lars@onthedot.example" class="btn btn-primary">lars@onthedot.example</a>
+            <a href="https://www.linkedin.com" class="btn btn-secondary" target="_blank" rel="noreferrer" data-i18n="contact.linkedIn">LinkedIn</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>On the Dot</p>
+        <div class="footer-links">
+          <a href="impressum.html" data-i18n="footer.imprint">Impressum</a>
+          <a href="datenschutz.html" data-i18n="footer.privacy">Datenschutz</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

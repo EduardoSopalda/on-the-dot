@@ -1,0 +1,131 @@
+const translations = {
+  de: {
+    "site.title": "On the Dot",
+    "nav.mission": "Mission",
+    "nav.benefits": "Vorteile",
+    "nav.shops": "Shops",
+    "nav.contact": "Kontakt",
+    "hero.eyebrow": "KI für inhabergeführte Läden",
+    "hero.tagline": "Frisch und pünktlich. Order on the Dot.",
+    "hero.lead": "Wir helfen kleinen Läden, mehr zu verkaufen, weniger zu verschwenden und Lieferzeiten exakt so zu planen, wie Kunden sie erwarten.",
+    "hero.primaryCta": "Jetzt sprechen",
+    "hero.secondaryCta": "Mehr erfahren",
+    "hero.point1": "Mehr Umsatz im Nebenraum",
+    "hero.point2": "Weniger Überbestände",
+    "hero.point3": "Exakte Lieferzeiten",
+    "visual.today": "Heute",
+    "visual.orders": "Bestellungen",
+    "visual.bouquets": "Bouquets",
+    "visual.cakes": "Kuchen",
+    "visual.lunch": "Lunch",
+    "mission.tag": "Die Mission",
+    "mission.title": "KI für inhabergeführte Läden. Einfach erklärt.",
+    "mission.copy": "Große Ketten nutzen Daten und Prognosen jeden Tag. Kleine Shops oft nicht. On the Dot bringt diese Klarheit an den lokalen Tresen und macht sie verständlich.",
+    "benefits.tag": "Warum es funktioniert",
+    "benefits.title": "Ein simples System für mehr Umsatz und weniger Verschwendung",
+    "benefits.card1.title": "Kleine Auswahl, volle Konzentration",
+    "benefits.card1.text": "Shops bieten eine klare Auswahl an fertigen Produkten an, ideal für Vorbestellungen und genaue Lieferzeiten.",
+    "benefits.card2.title": "Nachfrage, die Sinn macht",
+    "benefits.card2.text": "Einfache Prognosen helfen jedem Laden, genau das zu bestellen, was verkauft wird, und Überproduktion zu vermeiden.",
+    "benefits.card3.title": "Bestellungen pünktlich",
+    "benefits.card3.text": "Kunden wählen ein Lieferfenster. Der Laden sieht die Nachfrage, bevor der Tag richtig losgeht.",
+    "shops.tag": "Für welche Shops",
+    "shops.title": "Entwickelt für die Nachbarschaft, nicht für die Kette",
+    "shops.florist": "Blumenladen",
+    "shops.floristText": "Frische Bouquets und genaue Abholzeiten für denselben Tag.",
+    "shops.bakery": "Bäckerei",
+    "shops.bakeryText": "Frisch gebackenes Brot, Gebäck und kleine Extras, die am besten vor dem Mittag verkauft werden.",
+    "shops.delicatessen": "Feinkost",
+    "shops.delicatessenText": "Fertige Gerichte und saisonale Lieblingsgerichte für gestresste Stadtbewohner.",
+    "shops.caterer": "Caterer",
+    "shops.catererText": "Vorbestellungen für Büroessen, kleine Events und lokale Feiern.",
+    "quote.text": "Wir wollen KI für die Läden nutzbar machen, die Nachbarschaften am Leben halten.",
+    "quote.author": "Lars, Gründer",
+    "contact.tag": "Kontakt",
+    "contact.title": "Bereit, die Idee mit den ersten Shops zu testen?",
+    "contact.linkedIn": "LinkedIn",
+    "footer.imprint": "Impressum",
+    "footer.privacy": "Datenschutz"
+  },
+  en: {
+    "site.title": "On the Dot",
+    "nav.mission": "Mission",
+    "nav.benefits": "Benefits",
+    "nav.shops": "Shops",
+    "nav.contact": "Contact",
+    "hero.eyebrow": "AI for owner run shops",
+    "hero.tagline": "Fresh and on time. Order on the Dot.",
+    "hero.lead": "We help independent shops sell more, waste less and plan delivery times exactly the way customers expect.",
+    "hero.primaryCta": "Book a chat",
+    "hero.secondaryCta": "Learn more",
+    "hero.point1": "More sales in the side room",
+    "hero.point2": "Less overstock",
+    "hero.point3": "Exact delivery times",
+    "visual.today": "Today",
+    "visual.orders": "Orders",
+    "visual.bouquets": "Bouquets",
+    "visual.cakes": "Cakes",
+    "visual.lunch": "Lunch",
+    "mission.tag": "The Mission",
+    "mission.title": "AI for owner run shops. Simply explained.",
+    "mission.copy": "Big chains use data and forecasting every day. Small shops often do not. On the Dot brings that clarity to the local counter and makes it easier to understand.",
+    "benefits.tag": "Why it works",
+    "benefits.title": "A simple system for more sales and less waste",
+    "benefits.card1.title": "Small menu, full focus",
+    "benefits.card1.text": "Shops offer a clear selection of ready made products, ready for preorders and exact timing.",
+    "benefits.card2.title": "Demand that makes sense",
+    "benefits.card2.text": "Simple forecasts help each shop order exactly what it will sell and avoid overproduction.",
+    "benefits.card3.title": "Orders on time",
+    "benefits.card3.text": "Customers choose a delivery window. The shop sees the demand before the day gets busy.",
+    "shops.tag": "For which shops",
+    "shops.title": "Built for the neighborhood, not the chain",
+    "shops.florist": "Florist",
+    "shops.floristText": "Fresh bouquets and exact pickup or delivery slots for the same day.",
+    "shops.bakery": "Bakery",
+    "shops.bakeryText": "Fresh bread, pastries and little extras that sell best before lunch.",
+    "shops.delicatessen": "Delicatessen",
+    "shops.delicatessenText": "Ready made meals and seasonal favorites for busy city customers.",
+    "shops.caterer": "Caterer",
+    "shops.catererText": "Preorders for office lunches, small events and local gatherings.",
+    "quote.text": "We want to make AI useful for the shops that keep neighborhoods alive.",
+    "quote.author": "Lars, founder",
+    "contact.tag": "Contact",
+    "contact.title": "Ready to test the idea with the first shops?",
+    "contact.linkedIn": "LinkedIn",
+    "footer.imprint": "Imprint",
+    "footer.privacy": "Privacy"
+  }
+};
+
+const prefersLang = localStorage.getItem("onTheDotLang") || "de";
+
+function setLanguage(lang) {
+  const selected = translations[lang] ? lang : "de";
+  document.documentElement.lang = selected;
+  document.body.dataset.lang = selected;
+
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.getAttribute("data-i18n");
+    const value = translations[selected][key];
+
+    if (value) {
+      el.textContent = value;
+    }
+  });
+
+  document.querySelectorAll(".lang-btn").forEach((btn) => {
+    const isActive = btn.dataset.lang === selected;
+    btn.classList.toggle("active", isActive);
+    btn.setAttribute("aria-pressed", String(isActive));
+  });
+
+  localStorage.setItem("onTheDotLang", selected);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".lang-btn").forEach((btn) => {
+    btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
+  });
+
+  setLanguage(prefersLang);
+});
