@@ -1,100 +1,229 @@
-const translations = {
-  de: {
-    "site.title": "On the Dot",
-    "nav.mission": "Mission",
-    "nav.benefits": "Vorteile",
-    "nav.shops": "Shops",
-    "nav.contact": "Kontakt",
-    "hero.eyebrow": "KI für inhabergeführte Läden",
-    "hero.tagline": "Frisch und pünktlich. Order on the Dot.",
-    "hero.lead": "Wir helfen kleinen Läden, mehr zu verkaufen, weniger zu verschwenden und Lieferzeiten exakt so zu planen, wie Kunden sie erwarten.",
-    "hero.primaryCta": "Jetzt sprechen",
-    "hero.secondaryCta": "Mehr erfahren",
-    "hero.point1": "Mehr Umsatz im Nebenraum",
-    "hero.point2": "Weniger Überbestände",
-    "hero.point3": "Exakte Lieferzeiten",
-    "visual.today": "Heute",
-    "visual.orders": "Bestellungen",
-    "visual.bouquets": "Bouquets",
-    "visual.cakes": "Kuchen",
-    "visual.lunch": "Lunch",
-    "mission.tag": "Die Mission",
-    "mission.title": "KI für inhabergeführte Läden. Einfach erklärt.",
-    "mission.copy": "Große Ketten nutzen Daten und Prognosen jeden Tag. Kleine Shops oft nicht. On the Dot bringt diese Klarheit an den lokalen Tresen und macht sie verständlich.",
-    "benefits.tag": "Warum es funktioniert",
-    "benefits.title": "Ein simples System für mehr Umsatz und weniger Verschwendung",
-    "benefits.card1.title": "Kleine Auswahl, volle Konzentration",
-    "benefits.card1.text": "Shops bieten eine klare Auswahl an fertigen Produkten an, ideal für Vorbestellungen und genaue Lieferzeiten.",
-    "benefits.card2.title": "Nachfrage, die Sinn macht",
-    "benefits.card2.text": "Einfache Prognosen helfen jedem Laden, genau das zu bestellen, was verkauft wird, und Überproduktion zu vermeiden.",
-    "benefits.card3.title": "Bestellungen pünktlich",
-    "benefits.card3.text": "Kunden wählen ein Lieferfenster. Der Laden sieht die Nachfrage, bevor der Tag richtig losgeht.",
-    "shops.tag": "Für welche Shops",
-    "shops.title": "Entwickelt für die Nachbarschaft, nicht für die Kette",
-    "shops.florist": "Blumenladen",
-    "shops.floristText": "Frische Bouquets und genaue Abholzeiten für denselben Tag.",
-    "shops.bakery": "Bäckerei",
-    "shops.bakeryText": "Frisch gebackenes Brot, Gebäck und kleine Extras, die am besten vor dem Mittag verkauft werden.",
-    "shops.delicatessen": "Feinkost",
-    "shops.delicatessenText": "Fertige Gerichte und saisonale Lieblingsgerichte für gestresste Stadtbewohner.",
-    "shops.caterer": "Caterer",
-    "shops.catererText": "Vorbestellungen für Büroessen, kleine Events und lokale Feiern.",
-    "quote.text": "Wir wollen KI für die Läden nutzbar machen, die Nachbarschaften am Leben halten.",
-    "quote.author": "Lars, Gründer",
-    "contact.tag": "Kontakt",
-    "contact.title": "Bereit, die Idee mit den ersten Shops zu testen?",
-    "contact.linkedIn": "LinkedIn",
-    "footer.imprint": "Impressum",
-    "footer.privacy": "Datenschutz"
-  },
-  en: {
-    "site.title": "On the Dot",
-    "nav.mission": "Mission",
-    "nav.benefits": "Benefits",
-    "nav.shops": "Shops",
-    "nav.contact": "Contact",
-    "hero.eyebrow": "AI for owner run shops",
-    "hero.tagline": "Fresh and on time. Order on the Dot.",
-    "hero.lead": "We help independent shops sell more, waste less and plan delivery times exactly the way customers expect.",
-    "hero.primaryCta": "Book a chat",
-    "hero.secondaryCta": "Learn more",
-    "hero.point1": "More sales in the side room",
-    "hero.point2": "Less overstock",
-    "hero.point3": "Exact delivery times",
-    "visual.today": "Today",
-    "visual.orders": "Orders",
-    "visual.bouquets": "Bouquets",
-    "visual.cakes": "Cakes",
-    "visual.lunch": "Lunch",
-    "mission.tag": "The Mission",
-    "mission.title": "AI for owner run shops. Simply explained.",
-    "mission.copy": "Big chains use data and forecasting every day. Small shops often do not. On the Dot brings that clarity to the local counter and makes it easier to understand.",
-    "benefits.tag": "Why it works",
-    "benefits.title": "A simple system for more sales and less waste",
-    "benefits.card1.title": "Small menu, full focus",
-    "benefits.card1.text": "Shops offer a clear selection of ready made products, ready for preorders and exact timing.",
-    "benefits.card2.title": "Demand that makes sense",
-    "benefits.card2.text": "Simple forecasts help each shop order exactly what it will sell and avoid overproduction.",
-    "benefits.card3.title": "Orders on time",
-    "benefits.card3.text": "Customers choose a delivery window. The shop sees the demand before the day gets busy.",
-    "shops.tag": "For which shops",
-    "shops.title": "Built for the neighborhood, not the chain",
-    "shops.florist": "Florist",
-    "shops.floristText": "Fresh bouquets and exact pickup or delivery slots for the same day.",
-    "shops.bakery": "Bakery",
-    "shops.bakeryText": "Fresh bread, pastries and little extras that sell best before lunch.",
-    "shops.delicatessen": "Delicatessen",
-    "shops.delicatessenText": "Ready made meals and seasonal favorites for busy city customers.",
-    "shops.caterer": "Caterer",
-    "shops.catererText": "Preorders for office lunches, small events and local gatherings.",
-    "quote.text": "We want to make AI useful for the shops that keep neighborhoods alive.",
-    "quote.author": "Lars, founder",
-    "contact.tag": "Contact",
-    "contact.title": "Ready to test the idea with the first shops?",
-    "contact.linkedIn": "LinkedIn",
-    "footer.imprint": "Imprint",
-    "footer.privacy": "Privacy"
-  }
-};
+// Language toggle, the load moment, step weights on scroll and the sticky contact bar.
+(function () {
+  "use strict";
 
-window.translations = translations;
+  const STORAGE_KEY = "martinEngelLang";
+  const TEXTS = window.TEXTS || {};
+  const SITE = window.SITE || {};
+  const EXAMPLES = window.EXAMPLES || [];
+  const root = document.documentElement;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function readLang() {
+    try {
+      return localStorage.getItem(STORAGE_KEY);
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function storeLang(lang) {
+    try {
+      localStorage.setItem(STORAGE_KEY, lang);
+    } catch (error) {
+      // Storage can be blocked. The toggle still works for this visit.
+    }
+  }
+
+  // Turns every full stop that ends a sentence into a round dot.
+  function dotify(el, text) {
+    el.textContent = "";
+    const parts = text.split(/\.(?=\s|$)/);
+    parts.forEach((part, index) => {
+      if (index === parts.length - 1) {
+        if (part) el.appendChild(document.createTextNode(part));
+        return;
+      }
+      // Keep the last word and its dot together so the dot never wraps alone.
+      const cut = part.lastIndexOf(" ") + 1;
+      if (cut) el.appendChild(document.createTextNode(part.slice(0, cut)));
+      const word = document.createElement("span");
+      word.className = "dot-word";
+      word.textContent = part.slice(cut);
+      const dot = document.createElement("span");
+      dot.className = "dot";
+      dot.textContent = ".";
+      word.appendChild(dot);
+      el.appendChild(word);
+    });
+  }
+
+  function setText(el, text) {
+    if (el.hasAttribute("data-dots")) dotify(el, text);
+    else el.textContent = text;
+  }
+
+  function renderExamples(lang) {
+    const host = document.getElementById("examples");
+    if (!host || !EXAMPLES.length) return;
+    const t = TEXTS[lang];
+    host.textContent = "";
+
+    EXAMPLES.forEach((example) => {
+      const copy = example[lang] || example.de;
+      const article = document.createElement("article");
+      article.className = "case";
+
+      [
+        ["a", t["example.a"], copy.a],
+        ["thought", t["example.thought"], copy.thought],
+        ["b", t["example.b"], copy.b]
+      ].forEach(([kind, label, text]) => {
+        const row = document.createElement("div");
+        row.className = kind === "thought" ? "case-row case-row-thought" : "case-row";
+
+        const key = document.createElement("span");
+        key.className = "case-key";
+        key.textContent = label;
+
+        const body = document.createElement("p");
+        if (kind === "thought") {
+          body.className = "case-thought";
+          dotify(body, text);
+        } else {
+          body.className = "case-text";
+          body.textContent = text;
+        }
+
+        row.append(key, body);
+        article.appendChild(row);
+      });
+
+      host.appendChild(article);
+    });
+  }
+
+  function setLanguage(lang) {
+    const selected = TEXTS[lang] ? lang : "de";
+    const t = TEXTS[selected];
+    if (!t) return;
+
+    root.lang = selected;
+
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const value = t[el.getAttribute("data-i18n")];
+      if (value) setText(el, value);
+    });
+
+    document.querySelectorAll("[data-i18n-content]").forEach((el) => {
+      const value = t[el.getAttribute("data-i18n-content")];
+      if (value) el.setAttribute("content", value);
+    });
+
+    document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
+      const value = t[el.getAttribute("data-i18n-aria")];
+      if (value) el.setAttribute("aria-label", value);
+    });
+
+    document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
+      const value = t[el.getAttribute("data-i18n-alt")];
+      if (value) el.setAttribute("alt", value);
+    });
+
+    document.querySelectorAll(".lang-btn").forEach((btn) => {
+      btn.setAttribute("aria-pressed", String(btn.dataset.lang === selected));
+    });
+
+    renderExamples(selected);
+    storeLang(selected);
+  }
+
+  function applyContact() {
+    if (SITE.phoneLink) {
+      document.querySelectorAll('[data-contact="phone"]').forEach((a) => a.setAttribute("href", "tel:" + SITE.phoneLink));
+    }
+    if (SITE.phoneDisplay) {
+      document.querySelectorAll('[data-contact-text="phone"]').forEach((el) => (el.textContent = SITE.phoneDisplay));
+    }
+    if (SITE.email) {
+      document.querySelectorAll('[data-contact="email"]').forEach((a) => a.setAttribute("href", "mailto:" + SITE.email));
+      document.querySelectorAll('[data-contact-text="email"]').forEach((el) => (el.textContent = SITE.email));
+    }
+    if (SITE.linkedin) {
+      document.querySelectorAll("[data-linkedin]").forEach((li) => {
+        li.hidden = false;
+        li.querySelector("a").setAttribute("href", SITE.linkedin);
+      });
+    }
+  }
+
+  // The one orchestrated moment: words gain weight, then "gemacht" writes itself in.
+  function startHero() {
+    if (reduceMotion) {
+      root.classList.add("is-ready");
+      return;
+    }
+    let started = false;
+    const go = () => {
+      if (started) return;
+      started = true;
+      requestAnimationFrame(() => requestAnimationFrame(() => root.classList.add("is-ready")));
+    };
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(go);
+    setTimeout(go, 1200);
+  }
+
+  function watchSteps() {
+    const steps = document.querySelectorAll(".step");
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+      steps.forEach((step) => step.classList.add("is-in"));
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-in");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -18% 0px" }
+    );
+    steps.forEach((step) => observer.observe(step));
+  }
+
+  // Shows the compact "Kontakt speichern" bar once the hero has scrolled away,
+  // and hides it while one of the full contact blocks is on screen.
+  function stickyBar() {
+    const bar = document.querySelector(".sticky-save");
+    const hero = document.querySelector(".hero");
+    const blocks = document.querySelectorAll(".contact");
+    if (!bar || !hero || !("IntersectionObserver" in window)) return;
+
+    let pastHero = false;
+    const visibleBlocks = new Set();
+
+    const update = () => {
+      const show = pastHero && visibleBlocks.size === 0;
+      bar.classList.toggle("is-visible", show);
+      bar.setAttribute("aria-hidden", String(!show));
+      if (show) bar.removeAttribute("inert");
+      else bar.setAttribute("inert", "");
+    };
+
+    new IntersectionObserver((entries) => {
+      pastHero = !entries[0].isIntersecting && entries[0].boundingClientRect.top < 0;
+      update();
+    }).observe(hero);
+
+    const blockObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) visibleBlocks.add(entry.target);
+        else visibleBlocks.delete(entry.target);
+      });
+      update();
+    });
+    blocks.forEach((block) => blockObserver.observe(block));
+  }
+
+  document.querySelectorAll(".lang-btn").forEach((btn) => {
+    btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
+  });
+
+  applyContact();
+  setLanguage(readLang() || "de");
+  startHero();
+  watchSteps();
+  stickyBar();
+})();

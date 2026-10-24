@@ -1,131 +1,124 @@
-const translations = {
+// All visible text lives here. German is the default, English is optional.
+// Writing rules: clear standard German, formal "Sie", short sentences,
+// no hyphens or dashes anywhere in visible text.
+// Full stops in headlines become orange dots automatically.
+
+window.SITE = {
+  // Contact details. The vCard (martin-engel.vcf) is built separately:
+  // edit tools/build-assets.py and run it again when these change.
+  phoneDisplay: "+49160 99 666 776",
+  phoneLink: "+4916099666776",
+  email: "martinengel1975@outlook.de",
+  // TODO: paste the LinkedIn profile URL. The LinkedIn row stays hidden while this is empty.
+  linkedin: ""
+};
+
+window.TEXTS = {
   de: {
-    "site.title": "On the Dot",
-    "nav.mission": "Mission",
-    "nav.benefits": "Vorteile",
-    "nav.shops": "Shops",
-    "nav.contact": "Kontakt",
-    "hero.eyebrow": "KI für inhabergeführte Läden",
-    "hero.tagline": "Frisch und pünktlich. Order on the Dot.",
-    "hero.lead": "Wir helfen kleinen Läden, mehr zu verkaufen, weniger zu verschwenden und Lieferzeiten exakt so zu planen, wie Kunden sie erwarten.",
-    "hero.primaryCta": "Jetzt sprechen",
-    "hero.secondaryCta": "Mehr erfahren",
-    "hero.point1": "Mehr Umsatz im Nebenraum",
-    "hero.point2": "Weniger Überbestände",
-    "hero.point3": "Exakte Lieferzeiten",
-    "visual.today": "Heute",
-    "visual.orders": "Bestellungen",
-    "visual.bouquets": "Bouquets",
-    "visual.cakes": "Kuchen",
-    "visual.lunch": "Lunch",
-    "mission.tag": "Die Mission",
-    "mission.title": "KI für inhabergeführte Läden. Einfach erklärt.",
-    "mission.copy": "Große Ketten nutzen Daten und Prognosen jeden Tag. Kleine Shops oft nicht. On the Dot bringt diese Klarheit an den lokalen Tresen und macht sie verständlich.",
-    "benefits.tag": "Warum es funktioniert",
-    "benefits.title": "Ein simples System für mehr Umsatz und weniger Verschwendung",
-    "benefits.card1.title": "Kleine Auswahl, volle Konzentration",
-    "benefits.card1.text": "Shops bieten eine klare Auswahl an fertigen Produkten an, ideal für Vorbestellungen und genaue Lieferzeiten.",
-    "benefits.card2.title": "Nachfrage, die Sinn macht",
-    "benefits.card2.text": "Einfache Prognosen helfen jedem Laden, genau das zu bestellen, was verkauft wird, und Überproduktion zu vermeiden.",
-    "benefits.card3.title": "Bestellungen pünktlich",
-    "benefits.card3.text": "Kunden wählen ein Lieferfenster. Der Laden sieht die Nachfrage, bevor der Tag richtig losgeht.",
-    "shops.tag": "Für welche Shops",
-    "shops.title": "Entwickelt für die Nachbarschaft, nicht für die Kette",
-    "shops.florist": "Blumenladen",
-    "shops.floristText": "Frische Bouquets und genaue Abholzeiten für denselben Tag.",
-    "shops.bakery": "Bäckerei",
-    "shops.bakeryText": "Frisch gebackenes Brot, Gebäck und kleine Extras, die am besten vor dem Mittag verkauft werden.",
-    "shops.delicatessen": "Feinkost",
-    "shops.delicatessenText": "Fertige Gerichte und saisonale Lieblingsgerichte für gestresste Stadtbewohner.",
-    "shops.caterer": "Caterer",
-    "shops.catererText": "Vorbestellungen für Büroessen, kleine Events und lokale Feiern.",
-    "quote.text": "Wir wollen KI für die Läden nutzbar machen, die Nachbarschaften am Leben halten.",
-    "quote.author": "Lars, Gründer",
-    "contact.tag": "Kontakt",
-    "contact.title": "Bereit, die Idee mit den ersten Shops zu testen?",
-    "contact.linkedIn": "LinkedIn",
+    "meta.title": "Martin Engel. Aus dem Handel. Für den Handel. Mit KI.",
+    "meta.description": "Martin Engel verbindet jahrzehntelange Erfahrung im Handel mit KI. Er findet für Läden den Weg vom Problem zur Lösung.",
+    "skip": "Zum Inhalt springen",
+    "lang.label": "Sprache",
+
+    "hero.aria": "Daten. KI. Verständlich gemacht.",
+    "portrait.alt": "Porträt von Martin Engel",
+
+    "name": "Martin Engel",
+    "oneliner": "Aus dem Handel. Für den Handel. Mit KI.",
+    "intro": "Seit Jahrzehnten im Handel, von der Filiale bis zur Zentrale. Heute vermittle ich KI für den Laden um die Ecke.",
+
+    "contact.save": "Kontakt speichern",
+    "contact.call": "Anrufen",
+    "contact.mail": "Mail",
+    "contact.linkedin": "LinkedIn",
+    "contact.linkedinValue": "Profil ansehen",
+    "contact.heading": "Kontakt",
+
+    "atob.title": "Von A nach B",
+    "atob.lead": "Ich sehe ein Problem im Laden und finde den Weg zur Lösung. Mit Erfahrung und KI.",
+    "atob.s1.word": "Zuhören.",
+    "atob.s1.text": "Ich gehe in den Laden und frage, wo es wirklich klemmt.",
+    "atob.s2.word": "Verstehen.",
+    "atob.s2.text": "Hinter dem sichtbaren Problem liegt meist ein anderes. Das finde ich.",
+    "atob.s3.word": "Lösen.",
+    "atob.s3.text": "Einfach, bezahlbar, sofort nutzbar. Keine Technik um der Technik willen.",
+
+    "example.label": "Ein Beispiel",
+    "example.a": "A",
+    "example.thought": "Gedanke",
+    "example.b": "B",
+
+    "principle.a": "KI macht die Routine.",
+    "principle.b": "Menschen",
+    "principle.c": "machen den Unterschied.",
+
+    "invite.title": "Zeigen Sie mir Ihr Problem.",
+    "invite.sub": "Handel, Daten, KI. Ich finde den Weg von A nach B.",
+
+    "footer.event": "Persönlich auf der AUTOMA Chem 2026 im Estrel Berlin.",
     "footer.imprint": "Impressum",
     "footer.privacy": "Datenschutz"
   },
+
   en: {
-    "site.title": "On the Dot",
-    "nav.mission": "Mission",
-    "nav.benefits": "Benefits",
-    "nav.shops": "Shops",
-    "nav.contact": "Contact",
-    "hero.eyebrow": "AI for owner run shops",
-    "hero.tagline": "Fresh and on time. Order on the Dot.",
-    "hero.lead": "We help independent shops sell more, waste less and plan delivery times exactly the way customers expect.",
-    "hero.primaryCta": "Book a chat",
-    "hero.secondaryCta": "Learn more",
-    "hero.point1": "More sales in the side room",
-    "hero.point2": "Less overstock",
-    "hero.point3": "Exact delivery times",
-    "visual.today": "Today",
-    "visual.orders": "Orders",
-    "visual.bouquets": "Bouquets",
-    "visual.cakes": "Cakes",
-    "visual.lunch": "Lunch",
-    "mission.tag": "The Mission",
-    "mission.title": "AI for owner run shops. Simply explained.",
-    "mission.copy": "Big chains use data and forecasting every day. Small shops often do not. On the Dot brings that clarity to the local counter and makes it easier to understand.",
-    "benefits.tag": "Why it works",
-    "benefits.title": "A simple system for more sales and less waste",
-    "benefits.card1.title": "Small menu, full focus",
-    "benefits.card1.text": "Shops offer a clear selection of ready made products, ready for preorders and exact timing.",
-    "benefits.card2.title": "Demand that makes sense",
-    "benefits.card2.text": "Simple forecasts help each shop order exactly what it will sell and avoid overproduction.",
-    "benefits.card3.title": "Orders on time",
-    "benefits.card3.text": "Customers choose a delivery window. The shop sees the demand before the day gets busy.",
-    "shops.tag": "For which shops",
-    "shops.title": "Built for the neighborhood, not the chain",
-    "shops.florist": "Florist",
-    "shops.floristText": "Fresh bouquets and exact pickup or delivery slots for the same day.",
-    "shops.bakery": "Bakery",
-    "shops.bakeryText": "Fresh bread, pastries and little extras that sell best before lunch.",
-    "shops.delicatessen": "Delicatessen",
-    "shops.delicatessenText": "Ready made meals and seasonal favorites for busy city customers.",
-    "shops.caterer": "Caterer",
-    "shops.catererText": "Preorders for office lunches, small events and local gatherings.",
-    "quote.text": "We want to make AI useful for the shops that keep neighborhoods alive.",
-    "quote.author": "Lars, founder",
-    "contact.tag": "Contact",
-    "contact.title": "Ready to test the idea with the first shops?",
-    "contact.linkedIn": "LinkedIn",
-    "footer.imprint": "Imprint",
+    "meta.title": "Martin Engel. From retail. For retail. With AI.",
+    "meta.description": "Martin Engel combines decades of retail experience with AI. He finds the way from a shop's problem to its solution.",
+    "skip": "Skip to content",
+    "lang.label": "Language",
+
+    "hero.aria": "Data. AI. Made understandable.",
+    "portrait.alt": "Portrait of Martin Engel",
+
+    "name": "Martin Engel",
+    "oneliner": "From retail. For retail. With AI.",
+    "intro": "Decades in retail, from the shop floor to head office. Today I bring AI to the shop around the corner.",
+
+    "contact.save": "Save contact",
+    "contact.call": "Call",
+    "contact.mail": "Mail",
+    "contact.linkedin": "LinkedIn",
+    "contact.linkedinValue": "View profile",
+    "contact.heading": "Contact",
+
+    "atob.title": "From A to B",
+    "atob.lead": "I see a problem in the shop and find the way to a solution. With experience and AI.",
+    "atob.s1.word": "Listen.",
+    "atob.s1.text": "I go into the shop and ask where things really get stuck.",
+    "atob.s2.word": "Understand.",
+    "atob.s2.text": "Behind the visible problem there is usually another one. I find it.",
+    "atob.s3.word": "Solve.",
+    "atob.s3.text": "Simple, affordable, ready to use. No technology for its own sake.",
+
+    "example.label": "An example",
+    "example.a": "A",
+    "example.thought": "Thought",
+    "example.b": "B",
+
+    "principle.a": "AI does the routine.",
+    "principle.b": "People",
+    "principle.c": "make the difference.",
+
+    "invite.title": "Show me your problem.",
+    "invite.sub": "Retail, data, AI. I find the way from A to B.",
+
+    "footer.event": "In person at AUTOMA Chem 2026 at the Estrel Berlin.",
+    "footer.imprint": "Legal notice",
     "footer.privacy": "Privacy"
   }
 };
 
-const prefersLang = localStorage.getItem("onTheDotLang") || "de";
-
-function setLanguage(lang) {
-  const selected = translations[lang] ? lang : "de";
-  document.documentElement.lang = selected;
-  document.body.dataset.lang = selected;
-
-  document.querySelectorAll("[data-i18n]").forEach((el) => {
-    const key = el.getAttribute("data-i18n");
-    const value = translations[selected][key];
-
-    if (value) {
-      el.textContent = value;
+// Examples: copy one entry to add another case. They appear in this order.
+window.EXAMPLES = [
+  {
+    de: {
+      a: "Am Muttertag fehlen Blumen. Am Montag landen sie im Müll.",
+      thought: "Kein Blumenproblem. Ein Planungsproblem.",
+      b: "Vorbestellung, feste Lieferzeiten, einfache Prognosen. Bestellen auf den Punkt."
+    },
+    en: {
+      a: "On Mother's Day the flowers run out. On Monday they end up in the bin.",
+      thought: "Not a flower problem. A planning problem.",
+      b: "Preorders, fixed delivery times, simple forecasts. Ordering on the dot."
     }
-  });
-
-  document.querySelectorAll(".lang-btn").forEach((btn) => {
-    const isActive = btn.dataset.lang === selected;
-    btn.classList.toggle("active", isActive);
-    btn.setAttribute("aria-pressed", String(isActive));
-  });
-
-  localStorage.setItem("onTheDotLang", selected);
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".lang-btn").forEach((btn) => {
-    btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
-  });
-
-  setLanguage(prefersLang);
-});
+  }
+];

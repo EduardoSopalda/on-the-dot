@@ -1,0 +1,16 @@
+{
+  "name": "Martin Engel",
+  "short_name": "Martin Engel",
+  "description": "Aus dem Handel. Für den Handel. Mit KI.",
+  "lang": "de",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F5F1EA",
+  "theme_color": "#1F3D2B",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}
