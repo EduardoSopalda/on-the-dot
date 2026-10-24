@@ -7,6 +7,14 @@ Personal page of Martin Engel. Visitors at AUTOMA Chem 2026 (Estrel Berlin, 26 a
 
 Live: https://eduardosopalda.github.io/on-the-dot/
 
+## Presentation Card
+
+A phone-sized digital card for Martin Engel is at `card.html`. Live URL: https://eduardosopalda.github.io/on-the-dot/card.html
+
+It shows the brand stack (Daten. KI. Verständlich. gemacht), Martin's name, the one-liner, a QR code linking to the live site, and his phone and email. Open it on a phone and hold it up for someone to scan.
+
+Keep the same branding rules as the rest of the site: Waldgrün `#1F3D2B`, Papierweiß `#F5F1EA`, Holz `#A67C52`, and Mandarine `#FF7A1A` only on dots and the handwritten signature. Fraunces for display, Caveat Brush for "gemacht", Instrument Sans for body text.
+
 ## Structure
 
     index.html              The page
