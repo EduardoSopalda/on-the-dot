@@ -3,173 +3,308 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-i18n="site.title">On the Dot</title>
+    <title data-i18n="site.title">On the Dot · KI für inhabergeführte Läden</title>
     <meta
       name="description"
-      content="On the Dot helps small shops sell more and waste less with smart, simple ordering and delivery.
-    "
+      data-i18n-content="site.description"
+      content="On the Dot hilft inhabergeführten Läden, mehr zu verkaufen und weniger wegzuwerfen. Vorbestellung mit genauer Uhrzeit und einfache Prognosen. Aus Berlin."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <meta name="theme-color" content="#f6f1ea" />
+    <meta property="og:title" content="On the Dot · Frisch und pünktlich." />
+    <meta property="og:description" content="KI für inhabergeführte Läden. Einfach erklärt." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="css/style.css" />
+    <script>document.documentElement.classList.add("js");</script>
   </head>
   <body>
+    <a class="skip-link" href="#main" data-i18n="nav.skip">Zum Inhalt springen</a>
+
     <header class="site-header">
       <div class="container nav-wrap">
-        <a href="#top" class="brand" aria-label="On the Dot home">
-          <span class="brand-mark">OD</span>
+        <a href="#top" class="brand" aria-label="On the Dot">
+          <span class="brand-dot" aria-hidden="true"></span>
           <span class="brand-name">On the Dot</span>
         </a>
 
-        <nav class="main-nav" aria-label="Main navigation">
+        <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
           <a href="#mission" data-i18n="nav.mission">Mission</a>
-          <a href="#benefits" data-i18n="nav.benefits">Vorteile</a>
-          <a href="#shops" data-i18n="nav.shops">Shops</a>
-          <a href="#contact" data-i18n="nav.contact">Kontakt</a>
+          <a href="#ablauf" data-i18n="nav.how">Ablauf</a>
+          <a href="#laeden" data-i18n="nav.shops">Läden</a>
+          <a href="#gruender" data-i18n="nav.founder">Gründer</a>
+          <a href="#kontakt" class="nav-cta" data-i18n="nav.contact">Kontakt</a>
         </nav>
 
-        <div class="language-switch" aria-label="Language switcher">
-          <button class="lang-btn active" data-lang="de" type="button">DE</button>
-          <button class="lang-btn" data-lang="en" type="button">EN</button>
+        <div class="header-tools">
+          <div class="language-switch" role="group" aria-label="Sprache / Language">
+            <button class="lang-btn active" data-lang="de" type="button" aria-pressed="true">DE</button>
+            <button class="lang-btn" data-lang="en" type="button" aria-pressed="false">EN</button>
+          </div>
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+            <span class="sr-only" data-i18n="nav.menu">Menü</span>
+            <span class="menu-bar" aria-hidden="true"></span>
+            <span class="menu-bar" aria-hidden="true"></span>
+          </button>
         </div>
       </div>
     </header>
 
-    <main id="top">
-      <section class="hero">
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero" id="top">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow" data-i18n="hero.eyebrow">AI for owner run shops</p>
-            <h1 data-i18n="hero.tagline">Frisch und pünktlich. Order on the Dot.</h1>
-            <p class="lead" data-i18n="hero.lead">
-              We help independent shops sell more, waste less and deliver at the exact time customers expect.
+            <p class="eyebrow reveal">
+              <span data-i18n="hero.eyebrow">KI für inhabergeführte Läden</span>
+              <span class="eyebrow-sep" aria-hidden="true"></span>
+              <span>Berlin</span>
             </p>
-            <div class="hero-actions">
-              <a href="#contact" class="btn btn-primary" data-i18n="hero.primaryCta">Jetzt sprechen</a>
-              <a href="#mission" class="btn btn-secondary" data-i18n="hero.secondaryCta">Mehr erfahren</a>
+            <h1 class="reveal">
+              <span class="h1-line" data-i18n="hero.title1">Frisch und pünktlich.</span>
+              <span class="h1-line h1-accent">Order on the Dot<span class="accent-dot">.</span></span>
+            </h1>
+            <p class="lead reveal" data-i18n="hero.lead">
+              On the Dot hilft kleinen Läden, mehr zu verkaufen und weniger wegzuwerfen. Ihre Kundschaft bestellt vorab und wählt eine genaue Uhrzeit. Sie wissen schon am Morgen, was der Tag bringt.
+            </p>
+            <div class="hero-actions reveal">
+              <a href="#kontakt" class="btn btn-primary" data-i18n="hero.primaryCta">Gespräch vereinbaren</a>
+              <a href="#ablauf" class="btn btn-ghost">
+                <span data-i18n="hero.secondaryCta">So funktioniert es</span>
+                <span class="btn-arrow" aria-hidden="true">→</span>
+              </a>
             </div>
-            <ul class="hero-points" aria-label="Key benefits">
-              <li data-i18n="hero.point1">Mehr Umsatz im Nebenraum</li>
-              <li data-i18n="hero.point2">Weniger Überbestände</li>
-              <li data-i18n="hero.point3">Exakte Lieferzeiten</li>
+            <p class="hero-note reveal" data-i18n="hero.note">Für Blumenläden, Bäckereien, Feinkost und Caterer.</p>
+          </div>
+
+          <div class="hero-visual reveal" aria-hidden="true">
+            <div class="order-card">
+              <div class="order-head">
+                <span class="order-title" data-i18n="visual.title">Bestellungen für heute</span>
+                <span class="example-tag" data-i18n="visual.example">Beispiel</span>
+              </div>
+
+              <ul class="order-list">
+                <li>
+                  <span class="order-time">10:30</span>
+                  <span class="order-item">
+                    <strong data-i18n="visual.item1">Saisonstrauß</strong>
+                    <small data-i18n="visual.item1Mode">Abholung</small>
+                  </span>
+                  <span class="order-status ready"></span>
+                </li>
+                <li>
+                  <span class="order-time">12:15</span>
+                  <span class="order-item">
+                    <strong data-i18n="visual.item2">Tischgesteck</strong>
+                    <small data-i18n="visual.item2Mode">Lieferung</small>
+                  </span>
+                  <span class="order-status"></span>
+                </li>
+                <li>
+                  <span class="order-time">16:00</span>
+                  <span class="order-item">
+                    <strong data-i18n="visual.item3">Geburtstagsstrauß</strong>
+                    <small data-i18n="visual.item3Mode">Lieferung</small>
+                  </span>
+                  <span class="order-status"></span>
+                </li>
+              </ul>
+
+              <div class="forecast">
+                <div class="forecast-copy">
+                  <span class="forecast-label" data-i18n="visual.forecast">Prognose für Samstag</span>
+                  <span class="forecast-value" data-i18n="visual.forecastValue">18 Sträuße</span>
+                  <span class="forecast-hint" data-i18n="visual.forecastHint">Empfehlung: 20 Bund Tulpen</span>
+                </div>
+                <div class="bars">
+                  <span style="--h: 38%"></span>
+                  <span style="--h: 46%"></span>
+                  <span style="--h: 41%"></span>
+                  <span style="--h: 58%"></span>
+                  <span style="--h: 72%"></span>
+                  <span class="bar-accent" style="--h: 94%"></span>
+                </div>
+              </div>
+            </div>
+            <div class="hero-orb"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mission -->
+      <section id="mission" class="section section-paper">
+        <div class="container">
+          <div class="section-head">
+            <p class="section-tag reveal"><span class="tag-num">01</span><span data-i18n="mission.tag">Die Mission</span></p>
+            <h2 class="display reveal" data-i18n="mission.title">KI für inhabergeführte Läden. Einfach erklärt.</h2>
+          </div>
+          <div class="mission-grid">
+            <p class="mission-copy reveal" data-i18n="mission.copy">
+              Große Ketten planen jeden Tag mit Daten und Prognosen. Der Laden an der Ecke plant meist aus dem Gefühl heraus. On the Dot bringt diese Werkzeuge an die Ladentheke: verständlich, praktisch und ohne Fachchinesisch.
+            </p>
+            <ul class="principles">
+              <li class="reveal">
+                <h3 data-i18n="mission.p1.title">Verständlich</h3>
+                <p data-i18n="mission.p1.text">Jede Zahl wird erklärt. Die Entscheidung bleibt bei Ihnen.</p>
+              </li>
+              <li class="reveal">
+                <h3 data-i18n="mission.p2.title">Persönlich</h3>
+                <p data-i18n="mission.p2.text">Ein fester Ansprechpartner, der Ihren Laden kennt.</p>
+              </li>
+              <li class="reveal">
+                <h3 data-i18n="mission.p3.title">Klein anfangen</h3>
+                <p data-i18n="mission.p3.text">Wir starten mit wenigen Produkten und lernen gemeinsam.</p>
+              </li>
             </ul>
           </div>
+        </div>
+      </section>
 
-          <div class="hero-visual" aria-label="Illustration of a small shop system">
-            <div class="phone-card">
-              <div class="card-topline">
-                <span class="dot green"></span>
-                <span class="dot amber"></span>
-                <span class="dot red"></span>
-              </div>
-              <div class="mini-panel">
-                <p data-i18n="visual.today">Heute</p>
-                <h3>24</h3>
-                <span data-i18n="visual.orders">Bestellungen</span>
-              </div>
-              <div class="mini-rows">
-                <div><span data-i18n="visual.bouquets">Bouquets</span><strong>6</strong></div>
-                <div><span data-i18n="visual.cakes">Cakes</span><strong>8</strong></div>
-                <div><span data-i18n="visual.lunch">Lunch</span><strong>10</strong></div>
-              </div>
+      <!-- How it works -->
+      <section id="ablauf" class="section">
+        <div class="container">
+          <div class="section-head">
+            <p class="section-tag reveal"><span class="tag-num">02</span><span data-i18n="how.tag">So funktioniert es</span></p>
+            <h2 class="display reveal" data-i18n="how.title">Drei Schritte. Ein ruhigerer Morgen.</h2>
+          </div>
+
+          <ol class="steps">
+            <li class="step reveal">
+              <span class="step-num">I</span>
+              <h3 data-i18n="how.s1.title">Eine kleine Karte</h3>
+              <p data-i18n="how.s1.text">Ihr Laden zeigt eine kleine Auswahl fertiger Produkte im Netz. Der Strauß der Woche, das Brot vom Morgen, das Mittagessen fürs Büro.</p>
+            </li>
+            <li class="step reveal">
+              <span class="step-num">II</span>
+              <h3 data-i18n="how.s2.title">Eine genaue Uhrzeit</h3>
+              <p data-i18n="how.s2.text">Ihre Kundschaft bestellt vorab und wählt den Moment: Abholung um 10:30 oder Lieferung pünktlich zum Geburtstagskaffee.</p>
+            </li>
+            <li class="step reveal">
+              <span class="step-num">III</span>
+              <h3 data-i18n="how.s3.title">Eine klare Prognose</h3>
+              <p data-i18n="how.s3.text">Aus den Bestellungen entsteht eine einfache Vorschau. So kaufen Sie genau das ein, was Sie auch verkaufen werden.</p>
+            </li>
+          </ol>
+
+          <div class="audiences">
+            <div class="audience reveal">
+              <p class="audience-label" data-i18n="how.owners.label">Für Inhaberinnen und Inhaber</p>
+              <ul>
+                <li data-i18n="how.owners.1">Planbare Tage statt Rätselraten</li>
+                <li data-i18n="how.owners.2">Weniger Ware, die abends übrig bleibt</li>
+                <li data-i18n="how.owners.3">Zusätzliche Verkäufe durch Vorbestellungen</li>
+              </ul>
+            </div>
+            <div class="audience reveal">
+              <p class="audience-label" data-i18n="how.customers.label">Für die Kundschaft</p>
+              <ul>
+                <li data-i18n="how.customers.1">Bestellen, wann es passt</li>
+                <li data-i18n="how.customers.2">Abholen oder liefern lassen, zur gewählten Uhrzeit</li>
+                <li data-i18n="how.customers.3">Frisch aus dem Laden um die Ecke</li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="mission" class="section section-light">
-        <div class="container narrow">
-          <p class="section-tag" data-i18n="mission.tag">Die Mission</p>
-          <h2 data-i18n="mission.title">AI for owner run shops. Simply explained.</h2>
-          <p data-i18n="mission.copy">
-            Big chains use data and forecasting every day. Small shops often work without it. On the Dot brings that clarity to the local counter and makes it easy to understand.
-          </p>
-        </div>
-      </section>
-
-      <section id="benefits" class="section">
+      <!-- Shops -->
+      <section id="laeden" class="section section-paper">
         <div class="container">
-          <p class="section-tag" data-i18n="benefits.tag">Warum es funktioniert</p>
-          <h2 data-i18n="benefits.title">A simple system for more sales and less waste</h2>
-
-          <div class="feature-grid">
-            <article class="feature-card">
-              <div class="icon">01</div>
-              <h3 data-i18n="benefits.card1.title">Small menu, full focus</h3>
-              <p data-i18n="benefits.card1.text">Shops offer a clear selection of ready made products, ready for preorders and exact timing.</p>
-            </article>
-
-            <article class="feature-card">
-              <div class="icon">02</div>
-              <h3 data-i18n="benefits.card2.title">Demand that makes sense</h3>
-              <p data-i18n="benefits.card2.text">Simple forecasts help each shop order what it will sell and avoid overproduction.</p>
-            </article>
-
-            <article class="feature-card">
-              <div class="icon">03</div>
-              <h3 data-i18n="benefits.card3.title">Orders on time</h3>
-              <p data-i18n="benefits.card3.text">Customers choose a delivery window. The shop sees the demand before the day gets busy.</p>
-            </article>
+          <div class="section-head">
+            <p class="section-tag reveal"><span class="tag-num">03</span><span data-i18n="shops.tag">Für welche Läden</span></p>
+            <h2 class="display reveal" data-i18n="shops.title">Gemacht für die Nachbarschaft, nicht für die Kette.</h2>
           </div>
-        </div>
-      </section>
-
-      <section id="shops" class="section section-accent">
-        <div class="container">
-          <p class="section-tag" data-i18n="shops.tag">Für welche Shops</p>
-          <h2 data-i18n="shops.title">Built for the neighborhood, not the chain</h2>
 
           <div class="shop-grid">
-            <div class="shop-item">
-              <span class="shop-pill" data-i18n="shops.florist">Florist</span>
-              <p data-i18n="shops.floristText">Fresh bouquets and exact pickup or delivery slots for the same day.</p>
-            </div>
-            <div class="shop-item">
-              <span class="shop-pill" data-i18n="shops.bakery">Bakery</span>
-              <p data-i18n="shops.bakeryText">Fresh bread, pastries and little extras that sell best before lunch.</p>
-            </div>
-            <div class="shop-item">
-              <span class="shop-pill" data-i18n="shops.delicatessen">Delicatessen</span>
-              <p data-i18n="shops.delicatessenText">Ready made meals and seasonal favorites for busy city customers.</p>
-            </div>
-            <div class="shop-item">
-              <span class="shop-pill" data-i18n="shops.caterer">Caterer</span>
-              <p data-i18n="shops.catererText">Preorders for office lunches, small events and local gatherings.</p>
-            </div>
+            <article class="shop-card shop-card-lead reveal">
+              <span class="shop-badge" data-i18n="shops.first">Wir starten hier</span>
+              <h3 data-i18n="shops.florist">Blumenläden</h3>
+              <p data-i18n="shops.floristText">Sträuße für Geburtstage, Besuche und einfach so. Vorbestellt und pünktlich bereit.</p>
+            </article>
+            <article class="shop-card reveal">
+              <span class="shop-num" aria-hidden="true">02</span>
+              <h3 data-i18n="shops.bakery">Bäckereien</h3>
+              <p data-i18n="shops.bakeryText">Brot und Gebäck, das am Morgen schon reserviert ist. Am Abend bleibt weniger übrig.</p>
+            </article>
+            <article class="shop-card reveal">
+              <span class="shop-num" aria-hidden="true">03</span>
+              <h3 data-i18n="shops.deli">Feinkost</h3>
+              <p data-i18n="shops.deliText">Fertige Gerichte und saisonale Spezialitäten für Menschen mit wenig Zeit.</p>
+            </article>
+            <article class="shop-card reveal">
+              <span class="shop-num" aria-hidden="true">04</span>
+              <h3 data-i18n="shops.caterer">Caterer</h3>
+              <p data-i18n="shops.catererText">Vorbestellungen für das Mittagessen im Büro, kleine Feiern und Treffen im Viertel.</p>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="section section-light quote-section">
-        <div class="container narrow quote-box">
-          <p class="quote-mark">“</p>
-          <p data-i18n="quote.text">We want to make AI useful for the shops that keep neighborhoods alive.</p>
-          <p class="quote-author" data-i18n="quote.author">Lars, founder</p>
+      <!-- Founder -->
+      <section id="gruender" class="section section-ink">
+        <div class="container founder-grid">
+          <div class="founder-portrait reveal">
+            <!-- Replace with <img src="images/lars.jpg" alt="Lars, Gründer von On the Dot" /> once the photo is ready -->
+            <div class="portrait-placeholder" aria-hidden="true">
+              <span>L</span>
+            </div>
+          </div>
+
+          <div class="founder-copy">
+            <p class="section-tag reveal"><span class="tag-num">04</span><span data-i18n="founder.tag">Der Vermittler</span></p>
+            <h2 class="display reveal" data-i18n="founder.title">Zwischen KI und Ladentheke.</h2>
+            <p class="reveal" data-i18n="founder.copy">
+              Lars hat On the Dot in Berlin gegründet. Er versteht sich als Vermittler: Er übersetzt, was moderne Technik kann, in die Sprache des Ladens. Persönlich, vor Ort und Schritt für Schritt.
+            </p>
+            <blockquote class="founder-quote reveal">
+              <p data-i18n="founder.quote">„Wir wollen KI für die Läden nutzbar machen, die unsere Nachbarschaften lebendig halten.“</p>
+              <footer data-i18n="founder.signature">Lars, Gründer von On the Dot</footer>
+            </blockquote>
+          </div>
         </div>
       </section>
 
-      <section id="contact" class="section contact-section">
-        <div class="container contact-box">
-          <div>
-            <p class="section-tag" data-i18n="contact.tag">Kontakt</p>
-            <h2 data-i18n="contact.title">Ready to test the idea with the first shops?</h2>
-          </div>
-
-          <div class="contact-actions">
-            <a href="mailto:lars@onthedot.example" class="btn btn-primary">lars@onthedot.example</a>
-            <a href="https://www.linkedin.com" class="btn btn-secondary" target="_blank" rel="noreferrer" data-i18n="contact.linkedIn">LinkedIn</a>
+      <!-- Contact -->
+      <section id="kontakt" class="section contact-section">
+        <div class="container">
+          <div class="contact-box reveal">
+            <div class="contact-copy">
+              <p class="section-tag"><span class="tag-num">05</span><span data-i18n="contact.tag">Kontakt</span></p>
+              <h2 class="display" data-i18n="contact.title">Die ersten Läden in Schöneberg.</h2>
+              <p data-i18n="contact.copy">
+                Wir testen On the Dot gerade mit den ersten Läden in Schöneberg. Sie führen einen Blumenladen, eine Bäckerei oder ein Feinkostgeschäft und möchten dabei sein? Lars freut sich auf ein Gespräch.
+              </p>
+            </div>
+            <div class="contact-actions">
+              <a href="mailto:lars@onthedot.example" class="btn btn-primary btn-large" data-i18n="contact.mail">Lars schreiben</a>
+              <a href="https://www.linkedin.com" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">
+                <span>LinkedIn</span>
+                <span class="btn-arrow" aria-hidden="true">↗</span>
+              </a>
+              <p class="contact-address">lars@onthedot.example</p>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="container footer-wrap">
-        <p>On the Dot</p>
-        <div class="footer-links">
-          <a href="impressum.html" data-i18n="footer.imprint">Impressum</a>
-          <a href="datenschutz.html" data-i18n="footer.privacy">Datenschutz</a>
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="#top" class="brand" aria-label="On the Dot">
+            <span class="brand-dot" aria-hidden="true"></span>
+            <span class="brand-name">On the Dot</span>
+          </a>
+          <p class="footer-tagline">Frisch und pünktlich. Order on the Dot.</p>
+        </div>
+        <div class="footer-meta">
+          <p><span data-i18n="footer.made">Mit Sorgfalt gemacht in Berlin.</span> © <span data-year>2026</span> On the Dot</p>
+          <nav class="footer-links" aria-label="Rechtliches">
+            <a href="impressum.html" data-i18n="footer.imprint">Impressum</a>
+            <a href="datenschutz.html" data-i18n="footer.privacy">Datenschutz</a>
+          </nav>
         </div>
       </div>
     </footer>

@@ -1,131 +1,175 @@
-const translations = {
+// All visible texts in German and English.
+// Writing rules (see README): plain, warm words, no hyphens or em dashes.
+window.translations = {
   de: {
-    "site.title": "On the Dot",
+    "site.title": "On the Dot · KI für inhabergeführte Läden",
+    "site.description": "On the Dot hilft inhabergeführten Läden, mehr zu verkaufen und weniger wegzuwerfen. Vorbestellung mit genauer Uhrzeit und einfache Prognosen. Aus Berlin.",
+
+    "nav.skip": "Zum Inhalt springen",
     "nav.mission": "Mission",
-    "nav.benefits": "Vorteile",
-    "nav.shops": "Shops",
+    "nav.how": "Ablauf",
+    "nav.shops": "Läden",
+    "nav.founder": "Gründer",
     "nav.contact": "Kontakt",
+    "nav.menu": "Menü",
+
     "hero.eyebrow": "KI für inhabergeführte Läden",
-    "hero.tagline": "Frisch und pünktlich. Order on the Dot.",
-    "hero.lead": "Wir helfen kleinen Läden, mehr zu verkaufen, weniger zu verschwenden und Lieferzeiten exakt so zu planen, wie Kunden sie erwarten.",
-    "hero.primaryCta": "Jetzt sprechen",
-    "hero.secondaryCta": "Mehr erfahren",
-    "hero.point1": "Mehr Umsatz im Nebenraum",
-    "hero.point2": "Weniger Überbestände",
-    "hero.point3": "Exakte Lieferzeiten",
-    "visual.today": "Heute",
-    "visual.orders": "Bestellungen",
-    "visual.bouquets": "Bouquets",
-    "visual.cakes": "Kuchen",
-    "visual.lunch": "Lunch",
+    "hero.title1": "Frisch und pünktlich.",
+    "hero.lead": "On the Dot hilft kleinen Läden, mehr zu verkaufen und weniger wegzuwerfen. Ihre Kundschaft bestellt vorab und wählt eine genaue Uhrzeit. Sie wissen schon am Morgen, was der Tag bringt.",
+    "hero.primaryCta": "Gespräch vereinbaren",
+    "hero.secondaryCta": "So funktioniert es",
+    "hero.note": "Für Blumenläden, Bäckereien, Feinkost und Caterer.",
+
+    "visual.title": "Bestellungen für heute",
+    "visual.example": "Beispiel",
+    "visual.item1": "Saisonstrauß",
+    "visual.item1Mode": "Abholung",
+    "visual.item2": "Tischgesteck",
+    "visual.item2Mode": "Lieferung",
+    "visual.item3": "Geburtstagsstrauß",
+    "visual.item3Mode": "Lieferung",
+    "visual.forecast": "Prognose für Samstag",
+    "visual.forecastValue": "18 Sträuße",
+    "visual.forecastHint": "Empfehlung: 20 Bund Tulpen",
+
     "mission.tag": "Die Mission",
     "mission.title": "KI für inhabergeführte Läden. Einfach erklärt.",
-    "mission.copy": "Große Ketten nutzen Daten und Prognosen jeden Tag. Kleine Shops oft nicht. On the Dot bringt diese Klarheit an den lokalen Tresen und macht sie verständlich.",
-    "benefits.tag": "Warum es funktioniert",
-    "benefits.title": "Ein simples System für mehr Umsatz und weniger Verschwendung",
-    "benefits.card1.title": "Kleine Auswahl, volle Konzentration",
-    "benefits.card1.text": "Shops bieten eine klare Auswahl an fertigen Produkten an, ideal für Vorbestellungen und genaue Lieferzeiten.",
-    "benefits.card2.title": "Nachfrage, die Sinn macht",
-    "benefits.card2.text": "Einfache Prognosen helfen jedem Laden, genau das zu bestellen, was verkauft wird, und Überproduktion zu vermeiden.",
-    "benefits.card3.title": "Bestellungen pünktlich",
-    "benefits.card3.text": "Kunden wählen ein Lieferfenster. Der Laden sieht die Nachfrage, bevor der Tag richtig losgeht.",
-    "shops.tag": "Für welche Shops",
-    "shops.title": "Entwickelt für die Nachbarschaft, nicht für die Kette",
-    "shops.florist": "Blumenladen",
-    "shops.floristText": "Frische Bouquets und genaue Abholzeiten für denselben Tag.",
-    "shops.bakery": "Bäckerei",
-    "shops.bakeryText": "Frisch gebackenes Brot, Gebäck und kleine Extras, die am besten vor dem Mittag verkauft werden.",
-    "shops.delicatessen": "Feinkost",
-    "shops.delicatessenText": "Fertige Gerichte und saisonale Lieblingsgerichte für gestresste Stadtbewohner.",
+    "mission.copy": "Große Ketten planen jeden Tag mit Daten und Prognosen. Der Laden an der Ecke plant meist aus dem Gefühl heraus. On the Dot bringt diese Werkzeuge an die Ladentheke: verständlich, praktisch und ohne Fachchinesisch.",
+    "mission.p1.title": "Verständlich",
+    "mission.p1.text": "Jede Zahl wird erklärt. Die Entscheidung bleibt bei Ihnen.",
+    "mission.p2.title": "Persönlich",
+    "mission.p2.text": "Ein fester Ansprechpartner, der Ihren Laden kennt.",
+    "mission.p3.title": "Klein anfangen",
+    "mission.p3.text": "Wir starten mit wenigen Produkten und lernen gemeinsam.",
+
+    "how.tag": "So funktioniert es",
+    "how.title": "Drei Schritte. Ein ruhigerer Morgen.",
+    "how.s1.title": "Eine kleine Karte",
+    "how.s1.text": "Ihr Laden zeigt eine kleine Auswahl fertiger Produkte im Netz. Der Strauß der Woche, das Brot vom Morgen, das Mittagessen fürs Büro.",
+    "how.s2.title": "Eine genaue Uhrzeit",
+    "how.s2.text": "Ihre Kundschaft bestellt vorab und wählt den Moment: Abholung um 10:30 oder Lieferung pünktlich zum Geburtstagskaffee.",
+    "how.s3.title": "Eine klare Prognose",
+    "how.s3.text": "Aus den Bestellungen entsteht eine einfache Vorschau. So kaufen Sie genau das ein, was Sie auch verkaufen werden.",
+    "how.owners.label": "Für Inhaberinnen und Inhaber",
+    "how.owners.1": "Planbare Tage statt Rätselraten",
+    "how.owners.2": "Weniger Ware, die abends übrig bleibt",
+    "how.owners.3": "Zusätzliche Verkäufe durch Vorbestellungen",
+    "how.customers.label": "Für die Kundschaft",
+    "how.customers.1": "Bestellen, wann es passt",
+    "how.customers.2": "Abholen oder liefern lassen, zur gewählten Uhrzeit",
+    "how.customers.3": "Frisch aus dem Laden um die Ecke",
+
+    "shops.tag": "Für welche Läden",
+    "shops.title": "Gemacht für die Nachbarschaft, nicht für die Kette.",
+    "shops.first": "Wir starten hier",
+    "shops.florist": "Blumenläden",
+    "shops.floristText": "Sträuße für Geburtstage, Besuche und einfach so. Vorbestellt und pünktlich bereit.",
+    "shops.bakery": "Bäckereien",
+    "shops.bakeryText": "Brot und Gebäck, das am Morgen schon reserviert ist. Am Abend bleibt weniger übrig.",
+    "shops.deli": "Feinkost",
+    "shops.deliText": "Fertige Gerichte und saisonale Spezialitäten für Menschen mit wenig Zeit.",
     "shops.caterer": "Caterer",
-    "shops.catererText": "Vorbestellungen für Büroessen, kleine Events und lokale Feiern.",
-    "quote.text": "Wir wollen KI für die Läden nutzbar machen, die Nachbarschaften am Leben halten.",
-    "quote.author": "Lars, Gründer",
+    "shops.catererText": "Vorbestellungen für das Mittagessen im Büro, kleine Feiern und Treffen im Viertel.",
+
+    "founder.tag": "Der Vermittler",
+    "founder.title": "Zwischen KI und Ladentheke.",
+    "founder.copy": "Lars hat On the Dot in Berlin gegründet. Er versteht sich als Vermittler: Er übersetzt, was moderne Technik kann, in die Sprache des Ladens. Persönlich, vor Ort und Schritt für Schritt.",
+    "founder.quote": "„Wir wollen KI für die Läden nutzbar machen, die unsere Nachbarschaften lebendig halten.“",
+    "founder.signature": "Lars, Gründer von On the Dot",
+
     "contact.tag": "Kontakt",
-    "contact.title": "Bereit, die Idee mit den ersten Shops zu testen?",
-    "contact.linkedIn": "LinkedIn",
+    "contact.title": "Die ersten Läden in Schöneberg.",
+    "contact.copy": "Wir testen On the Dot gerade mit den ersten Läden in Schöneberg. Sie führen einen Blumenladen, eine Bäckerei oder ein Feinkostgeschäft und möchten dabei sein? Lars freut sich auf ein Gespräch.",
+    "contact.mail": "Lars schreiben",
+
+    "footer.made": "Mit Sorgfalt gemacht in Berlin.",
     "footer.imprint": "Impressum",
     "footer.privacy": "Datenschutz"
   },
+
   en: {
-    "site.title": "On the Dot",
+    "site.title": "On the Dot · AI for owner run shops",
+    "site.description": "On the Dot helps owner run shops sell more and waste less. Preorders with an exact time and simple forecasts. From Berlin.",
+
+    "nav.skip": "Skip to content",
     "nav.mission": "Mission",
-    "nav.benefits": "Benefits",
+    "nav.how": "How it works",
     "nav.shops": "Shops",
+    "nav.founder": "Founder",
     "nav.contact": "Contact",
+    "nav.menu": "Menu",
+
     "hero.eyebrow": "AI for owner run shops",
-    "hero.tagline": "Fresh and on time. Order on the Dot.",
-    "hero.lead": "We help independent shops sell more, waste less and plan delivery times exactly the way customers expect.",
-    "hero.primaryCta": "Book a chat",
-    "hero.secondaryCta": "Learn more",
-    "hero.point1": "More sales in the side room",
-    "hero.point2": "Less overstock",
-    "hero.point3": "Exact delivery times",
-    "visual.today": "Today",
-    "visual.orders": "Orders",
-    "visual.bouquets": "Bouquets",
-    "visual.cakes": "Cakes",
-    "visual.lunch": "Lunch",
-    "mission.tag": "The Mission",
+    "hero.title1": "Fresh and on time.",
+    "hero.lead": "On the Dot helps small shops sell more and waste less. Customers order ahead and choose an exact time. You know in the morning what the day will bring.",
+    "hero.primaryCta": "Book a conversation",
+    "hero.secondaryCta": "See how it works",
+    "hero.note": "For florists, bakeries, delis and caterers.",
+
+    "visual.title": "Today's orders",
+    "visual.example": "Example",
+    "visual.item1": "Seasonal bouquet",
+    "visual.item1Mode": "Pickup",
+    "visual.item2": "Table arrangement",
+    "visual.item2Mode": "Delivery",
+    "visual.item3": "Birthday bouquet",
+    "visual.item3Mode": "Delivery",
+    "visual.forecast": "Forecast for Saturday",
+    "visual.forecastValue": "18 bouquets",
+    "visual.forecastHint": "Suggested: 20 bunches of tulips",
+
+    "mission.tag": "The mission",
     "mission.title": "AI for owner run shops. Simply explained.",
-    "mission.copy": "Big chains use data and forecasting every day. Small shops often do not. On the Dot brings that clarity to the local counter and makes it easier to understand.",
-    "benefits.tag": "Why it works",
-    "benefits.title": "A simple system for more sales and less waste",
-    "benefits.card1.title": "Small menu, full focus",
-    "benefits.card1.text": "Shops offer a clear selection of ready made products, ready for preorders and exact timing.",
-    "benefits.card2.title": "Demand that makes sense",
-    "benefits.card2.text": "Simple forecasts help each shop order exactly what it will sell and avoid overproduction.",
-    "benefits.card3.title": "Orders on time",
-    "benefits.card3.text": "Customers choose a delivery window. The shop sees the demand before the day gets busy.",
-    "shops.tag": "For which shops",
-    "shops.title": "Built for the neighborhood, not the chain",
-    "shops.florist": "Florist",
-    "shops.floristText": "Fresh bouquets and exact pickup or delivery slots for the same day.",
-    "shops.bakery": "Bakery",
-    "shops.bakeryText": "Fresh bread, pastries and little extras that sell best before lunch.",
-    "shops.delicatessen": "Delicatessen",
-    "shops.delicatessenText": "Ready made meals and seasonal favorites for busy city customers.",
-    "shops.caterer": "Caterer",
-    "shops.catererText": "Preorders for office lunches, small events and local gatherings.",
-    "quote.text": "We want to make AI useful for the shops that keep neighborhoods alive.",
-    "quote.author": "Lars, founder",
+    "mission.copy": "Big chains plan every day with data and forecasts. The shop on the corner mostly plans by feel. On the Dot brings these tools to the shop counter: clear, practical and free of jargon.",
+    "mission.p1.title": "Clear",
+    "mission.p1.text": "Every number is explained. The decision stays with you.",
+    "mission.p2.title": "Personal",
+    "mission.p2.text": "One dedicated contact who knows your shop.",
+    "mission.p3.title": "Start small",
+    "mission.p3.text": "We begin with a few products and learn together.",
+
+    "how.tag": "How it works",
+    "how.title": "Three steps. A calmer morning.",
+    "how.s1.title": "A small menu",
+    "how.s1.text": "Your shop shows a small selection of ready made products online. The bouquet of the week, the morning bread, lunch for the office.",
+    "how.s2.title": "An exact time",
+    "how.s2.text": "Customers order ahead and choose the moment: pickup at 10:30 or delivery just in time for the birthday coffee.",
+    "how.s3.title": "A clear forecast",
+    "how.s3.text": "Orders turn into a simple preview. So you buy exactly what you will sell.",
+    "how.owners.label": "For shop owners",
+    "how.owners.1": "Days you can plan instead of guesswork",
+    "how.owners.2": "Less stock left over in the evening",
+    "how.owners.3": "Extra sales through preorders",
+    "how.customers.label": "For customers",
+    "how.customers.1": "Order whenever it suits you",
+    "how.customers.2": "Pick up or have it delivered, at the time you chose",
+    "how.customers.3": "Fresh from the shop around the corner",
+
+    "shops.tag": "Which shops",
+    "shops.title": "Made for the neighborhood, not the chain.",
+    "shops.first": "Starting here",
+    "shops.florist": "Florists",
+    "shops.floristText": "Bouquets for birthdays, visits and just because. Ordered ahead and ready on time.",
+    "shops.bakery": "Bakeries",
+    "shops.bakeryText": "Bread and pastries already reserved in the morning. Less is left over in the evening.",
+    "shops.deli": "Delis",
+    "shops.deliText": "Ready made meals and seasonal specialties for people short on time.",
+    "shops.caterer": "Caterers",
+    "shops.catererText": "Preorders for office lunches, small celebrations and neighborhood gatherings.",
+
+    "founder.tag": "The connector",
+    "founder.title": "Between AI and the shop counter.",
+    "founder.copy": "Lars founded On the Dot in Berlin. He sees himself as a connector: he translates what modern technology can do into the language of the shop. In person, on site and step by step.",
+    "founder.quote": "“We want to make AI useful for the shops that keep our neighborhoods alive.”",
+    "founder.signature": "Lars, founder of On the Dot",
+
     "contact.tag": "Contact",
-    "contact.title": "Ready to test the idea with the first shops?",
-    "contact.linkedIn": "LinkedIn",
+    "contact.title": "The first shops in Schöneberg.",
+    "contact.copy": "We are testing On the Dot with the first shops in Schöneberg right now. Do you run a florist, a bakery or a deli and want to take part? Lars looks forward to hearing from you.",
+    "contact.mail": "Write to Lars",
+
+    "footer.made": "Made with care in Berlin.",
     "footer.imprint": "Imprint",
     "footer.privacy": "Privacy"
   }
 };
-
-const prefersLang = localStorage.getItem("onTheDotLang") || "de";
-
-function setLanguage(lang) {
-  const selected = translations[lang] ? lang : "de";
-  document.documentElement.lang = selected;
-  document.body.dataset.lang = selected;
-
-  document.querySelectorAll("[data-i18n]").forEach((el) => {
-    const key = el.getAttribute("data-i18n");
-    const value = translations[selected][key];
-
-    if (value) {
-      el.textContent = value;
-    }
-  });
-
-  document.querySelectorAll(".lang-btn").forEach((btn) => {
-    const isActive = btn.dataset.lang === selected;
-    btn.classList.toggle("active", isActive);
-    btn.setAttribute("aria-pressed", String(isActive));
-  });
-
-  localStorage.setItem("onTheDotLang", selected);
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".lang-btn").forEach((btn) => {
-    btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
-  });
-
-  setLanguage(prefersLang);
-});
