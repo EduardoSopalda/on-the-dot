@@ -885,15 +885,15 @@ button {
 @media (prefers-reduced-motion: no-preference) {
   .dot {
     transform-origin: center;
-    animation: pulse 2s ease-in-out infinite;
+    animation: pulse 3s ease-in-out infinite;
   }
 
   .route-dot {
-    animation: pulse-route 2s ease-in-out infinite;
+    animation: pulse-route 3s ease-in-out infinite;
   }
 
   .portrait::after {
-    animation: pulse-portrait 2s ease-in-out infinite;
+    animation: pulse-portrait 3s ease-in-out infinite;
   }
 }
 
