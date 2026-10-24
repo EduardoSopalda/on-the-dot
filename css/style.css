@@ -476,6 +476,14 @@ button {
   letter-spacing: 0.01em;
 }
 
+.contact-list a.cl-phone-link {
+  grid-template-areas: "value arrow";
+}
+
+.cl-phone-link .cl-phone {
+  font-size: 1.25rem;
+}
+
 .cl-arrow {
   grid-area: arrow;
   font-size: 1.15rem;
