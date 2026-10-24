@@ -47,9 +47,6 @@ window.TEXTS = {
     "atob.s3.text": "Einfach, bezahlbar, sofort nutzbar. Keine Technik um der Technik willen.",
 
     "example.label": "Ein Beispiel",
-    "example.a": "A",
-    "example.thought": "Gedanke",
-    "example.b": "B",
 
     "principle.a": "KI macht die Routine.",
     "principle.b": "Menschen",
@@ -96,9 +93,6 @@ window.TEXTS = {
     "atob.s3.text": "Simple, affordable, ready to use. No technology for its own sake.",
 
     "example.label": "An example",
-    "example.a": "A",
-    "example.thought": "Thought",
-    "example.b": "B",
 
     "principle.a": "AI does the routine.",
     "principle.b": "People",
@@ -113,18 +107,3 @@ window.TEXTS = {
   }
 };
 
-// Examples: copy one entry to add another case. They appear in this order.
-window.EXAMPLES = [
-  {
-    de: {
-      a: "Am Muttertag fehlen Blumen. Am Montag landen sie im Müll.",
-      thought: "Kein Blumenproblem. Ein Planungsproblem.",
-      b: "Vorbestellung, feste Lieferzeiten, einfache Prognosen. Bestellen auf den Punkt."
-    },
-    en: {
-      a: "On Mother's Day the flowers run out. On Monday they end up in the bin.",
-      thought: "Not a flower problem. A planning problem.",
-      b: "Preorders, fixed delivery times, simple forecasts. Ordering on the dot."
-    }
-  }
-];

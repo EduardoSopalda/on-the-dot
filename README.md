@@ -11,7 +11,7 @@ Live: https://eduardosopalda.github.io/on-the-dot/
 
     index.html              The page
     css/style.css           Design: colours, typography, layout, motion, dark mode
-    js/i18n.js              All text (German default, English optional), contact details, examples
+    js/i18n.js              All text (German default, English optional), contact details
     js/main.js              Language toggle, load animation, step weights, sticky contact bar
     martin-engel.vcf        Contact card behind "Kontakt speichern" (UTF 8, with photo)
     impressum.html          Legal notice (draft, see checklist)
@@ -29,7 +29,7 @@ No framework, no build step, no backend, no cookies, no analytics. Fonts are ser
 
 **Text.** Open `js/i18n.js`. Every visible string is there, in `de` and `en`. Rules: clear standard German, formal "Sie", short sentences, no hyphens or dashes in visible text. Full stops in headlines turn into orange dots automatically.
 
-**Add an example.** In `js/i18n.js`, copy one entry of `window.EXAMPLES` (the block from `{` to `}`), paste it below and change the texts. Each example has `a`, `thought` and `b` in both languages.
+**The example.** The example section now shows the business idea as a fixed bilingual headline in `index.html`.
 
 **LinkedIn.** In `js/i18n.js`, set `linkedin` in `window.SITE` to the profile URL. The LinkedIn row appears by itself. Also add it to `CONTACT` in `tools/build-assets.py` and rebuild the vCard (below).
 

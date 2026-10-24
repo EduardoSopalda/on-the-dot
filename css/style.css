@@ -615,52 +615,32 @@ button {
   font-size: 1.1rem;
 }
 
-.case-list {
+.idea {
   margin-top: 20px;
-}
-
-.case {
+  padding-top: 22px;
   border-top: 1.5px solid var(--text);
 }
 
-.case + .case {
-  margin-top: 56px;
+.idea-title {
+  font-family: var(--display);
+  font-size: clamp(2.2rem, 9vw, 3.1rem);
+  font-weight: 640;
+  font-variation-settings: "SOFT" 45, "WONK" 1;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
 }
 
-.case-row {
-  display: grid;
-  grid-template-columns: 5.2rem 1fr;
-  gap: 14px;
-  padding: 20px 0;
-  border-bottom: 1px solid var(--rule);
-}
-
-.case-key {
-  padding-top: 0.22em;
+.idea-sub {
+  margin-top: 10px;
   font-family: var(--display);
   font-style: italic;
-  font-size: 1.02rem;
-  font-weight: 500;
-  color: var(--label);
-}
-
-.case-text {
-  font-size: 1.15rem;
-  line-height: 1.5;
-}
-
-.case-row-thought {
-  padding: 30px 0;
-}
-
-.case-thought {
-  font-family: var(--display);
-  font-style: italic;
-  font-size: clamp(1.6rem, 6.8vw, 2.25rem);
-  font-weight: 460;
-  font-variation-settings: "SOFT" 100, "WONK" 1;
-  line-height: 1.1;
-  letter-spacing: -0.018em;
+  font-size: clamp(1.2rem, 5.2vw, 1.6rem);
+  font-weight: 400;
+  font-variation-settings: "SOFT" 100;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--waldgruen);
+  opacity: 0.7;
 }
 
 .principle-section {

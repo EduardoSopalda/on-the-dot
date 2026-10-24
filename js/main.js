@@ -5,7 +5,6 @@
   const STORAGE_KEY = "martinEngelLang";
   const TEXTS = window.TEXTS || {};
   const SITE = window.SITE || {};
-  const EXAMPLES = window.EXAMPLES || [];
   const root = document.documentElement;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -53,46 +52,6 @@
     else el.textContent = text;
   }
 
-  function renderExamples(lang) {
-    const host = document.getElementById("examples");
-    if (!host || !EXAMPLES.length) return;
-    const t = TEXTS[lang];
-    host.textContent = "";
-
-    EXAMPLES.forEach((example) => {
-      const copy = example[lang] || example.de;
-      const article = document.createElement("article");
-      article.className = "case";
-
-      [
-        ["a", t["example.a"], copy.a],
-        ["thought", t["example.thought"], copy.thought],
-        ["b", t["example.b"], copy.b]
-      ].forEach(([kind, label, text]) => {
-        const row = document.createElement("div");
-        row.className = kind === "thought" ? "case-row case-row-thought" : "case-row";
-
-        const key = document.createElement("span");
-        key.className = "case-key";
-        key.textContent = label;
-
-        const body = document.createElement("p");
-        if (kind === "thought") {
-          body.className = "case-thought";
-          dotify(body, text);
-        } else {
-          body.className = "case-text";
-          body.textContent = text;
-        }
-
-        row.append(key, body);
-        article.appendChild(row);
-      });
-
-      host.appendChild(article);
-    });
-  }
-
   function setLanguage(lang) {
     const selected = TEXTS[lang] ? lang : "de";
     const t = TEXTS[selected];
@@ -124,7 +83,6 @@
       btn.setAttribute("aria-pressed", String(btn.dataset.lang === selected));
     });
 
-    renderExamples(selected);
     storeLang(selected);
   }
 
