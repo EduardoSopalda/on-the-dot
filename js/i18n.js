@@ -35,7 +35,7 @@ window.TEXTS = {
     "contact.heading": "Kontakt",
 
     "atob.title": "Von A nach B",
-    "atob.lead": "Ich sehe ein Problem im Laden und finde den Weg zur Lösung. Mit Erfahrung und KI.",
+    "atob.lead": "Ich sehe ein Problem im Laden und finde die Lösung. Mit Erfahrung und KI.",
     "atob.s1.word": "Zuhören.",
     "atob.s1.sub": "Mit dem Zuhören fängt alles an.",
     "atob.s1.text": "Ich gehe in den Laden und frage, wo es wirklich klemmt.",
