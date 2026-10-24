@@ -26,6 +26,15 @@
   font-display: swap;
 }
 
+/* Full name subset, used for the hero name */
+@font-face {
+  font-family: "Caveat Brush Name";
+  src: url("../fonts/caveat-brush.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @font-face {
   font-family: "Caveat Brush";
   src: url("../fonts/caveat-brush-gemacht.woff2") format("woff2");
@@ -246,6 +255,19 @@ button {
   text-transform: uppercase;
   color: rgba(245, 241, 234, 0.92);
 }
+
+/* Name: larger, hand-drawn, Papierweiß on Waldgrün. Mandarine stays on the dot only. */
+.hero-name {
+  font-family: "Caveat Brush Name", var(--script);
+  font-size: clamp(2rem, 9vw, 2.8rem);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  line-height: 1;
+  color: var(--papier);
+}
+
+.hero-name .dot { --dot: 0.16em; }
 
 .lang {
   display: inline-flex;
